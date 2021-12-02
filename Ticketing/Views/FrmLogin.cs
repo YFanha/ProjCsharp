@@ -14,6 +14,8 @@ namespace Ticketing
 {
     public partial class FrmLogin : Form
     {
+        MySqlConnection connection;
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace Ticketing
                 int port = 3306;
 
 
-                MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
+                connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
                 connection.Open();
 
             }
@@ -46,17 +48,8 @@ namespace Ticketing
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            string datasource = "10.229.33.34";
-            string username = "admin";
-            string pass = "Pa$$w0rd";
-            int port = 3306;
-
-
-            MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
-
             try
             {
-                connection.Open();
 
                 string sqlCommand = "SELECT password FROM people WHERE email = \'" + txtboxLogin.Text + "\';";
 
@@ -72,9 +65,6 @@ namespace Ticketing
                         MessageBox.Show("Mot de passe incorrect !");
                     }
                 }
-
-
-
             }
 
             catch (Exception ex)

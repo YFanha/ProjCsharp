@@ -1,0 +1,2 @@
+CREATE USER 'admin'@'%' IDENTIFIED BY 'Pa$$w0rd'; -- % signifie venant de partout, par seulement pour le localhost
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER on *.* TO 'admin'@'%'; -- *.* signifie partout (préférable de modifier)

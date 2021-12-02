@@ -1,7 +1,7 @@
 ﻿
 namespace Ticketing
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,31 @@ namespace Ticketing
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtMdp = new System.Windows.Forms.TextBox();
+            this.txtboxLogin = new System.Windows.Forms.TextBox();
+            this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.btnConnexion = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtEmail
+            // txtboxLogin
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Location = new System.Drawing.Point(283, 121);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(209, 29);
-            this.txtEmail.TabIndex = 1;
-            this.txtEmail.Text = "Email";
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtboxLogin.Location = new System.Drawing.Point(283, 121);
+            this.txtboxLogin.Name = "txtboxLogin";
+            this.txtboxLogin.Size = new System.Drawing.Size(209, 29);
+            this.txtboxLogin.TabIndex = 1;
+            this.txtboxLogin.Text = "Email";
+            this.txtboxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtMdp
+            // txtboxPassword
             // 
-            this.txtMdp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtMdp.Location = new System.Drawing.Point(283, 192);
-            this.txtMdp.Name = "txtMdp";
-            this.txtMdp.Size = new System.Drawing.Size(209, 29);
-            this.txtMdp.TabIndex = 2;
-            this.txtMdp.Text = "Mot de passe";
-            this.txtMdp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtboxPassword.Location = new System.Drawing.Point(283, 192);
+            this.txtboxPassword.Name = "txtboxPassword";
+            this.txtboxPassword.Size = new System.Drawing.Size(209, 29);
+            this.txtboxPassword.TabIndex = 2;
+            this.txtboxPassword.Text = "Mot de passe";
+            this.txtboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnConnexion
             // 
@@ -64,17 +65,31 @@ namespace Ticketing
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
-            // Form2
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.Location = new System.Drawing.Point(12, 412);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(96, 26);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Fermer";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnConnexion);
-            this.Controls.Add(this.txtMdp);
-            this.Controls.Add(this.txtEmail);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Controls.Add(this.txtboxPassword);
+            this.Controls.Add(this.txtboxLogin);
+            this.Name = "FrmLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,8 +97,9 @@ namespace Ticketing
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtMdp;
+        private System.Windows.Forms.TextBox txtboxLogin;
+        private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.Button btnClose;
     }
 }

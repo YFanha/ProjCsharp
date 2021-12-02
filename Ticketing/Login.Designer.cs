@@ -54,6 +54,7 @@ namespace Ticketing
             this.txtboxPassword.TabIndex = 2;
             this.txtboxPassword.Text = "Mot de passe";
             this.txtboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtboxPassword.UseSystemPasswordChar = true;
             // 
             // btnConnexion
             // 
@@ -98,8 +99,8 @@ namespace Ticketing
         #endregion
 
         private System.Windows.Forms.TextBox txtboxLogin;
-        private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.TextBox txtboxPassword;
     }
 }

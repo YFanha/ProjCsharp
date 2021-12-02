@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YFO1qV9jYFWxVZho8cr6gmkulAg5RfKV5X2JW85UwSWyK/rag7I7EKpM3r8RsoUWcdLN8eESALrkQcXc3R7UhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\simon.cuany\\OneDrive - CPNV\\Documents\\GitHub\\ProjCsharp\\Création tickets\\Création tickets\\Création tickets.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\simon.cuany\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

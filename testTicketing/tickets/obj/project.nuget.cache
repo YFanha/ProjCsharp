@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PBMYoQIjzk/cKzrWl2I5UNVhrRI+3+UIvd2zvSRf2n8TQ1PJVZ+BpFOfuAqor5CAg63PaTD8FoixwYqJYjAdgw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\simon.cuany\\source\\repos\\testTicketing\\tickets\\tickets.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\simon.cuany\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}

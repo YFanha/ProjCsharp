@@ -17,3 +17,40 @@ C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-wind
 C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.genruntimeconfig.cache
 C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.FrmLogin.resources
 C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.Frm_ViewTtickets.resources
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\sven.volery\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.CopyComplete
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.exe
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.deps.json
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.runtimeconfig.json
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.runtimeconfig.dev.json
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\ref\Ticketing.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ticketing.pdb
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.AssemblyReference.cache
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.FrmLogin.resources
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.Frm_ViewTtickets.resources
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.GenerateResource.cache
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.AssemblyInfoInputs.cache
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.AssemblyInfo.cs
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.CoreCompileInputs.cache
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.CopyComplete
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\ref\Ticketing.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.pdb
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.genruntimeconfig.cache

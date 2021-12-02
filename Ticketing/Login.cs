@@ -34,7 +34,7 @@ namespace Ticketing
                 int port = 3306;
 
 
-                MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=people");
+                MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
                 connection.Open();
 
             }
@@ -52,7 +52,7 @@ namespace Ticketing
             int port = 3306;
 
 
-            MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=people");
+            MySqlConnection connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
 
             try
             {

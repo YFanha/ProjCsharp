@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ticketing
 {
-    public partial class View_tickets : Form
+    public partial class Frm_ViewTtickets : Form
     {
-        public View_tickets()
+        public Frm_ViewTtickets()
         {
             InitializeComponent();
         }

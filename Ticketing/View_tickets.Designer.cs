@@ -1,7 +1,7 @@
 ﻿
 namespace Ticketing
 {
-    partial class View_tickets
+    partial class Frm_ViewTtickets
     {
         /// <summary>
         ///  Required designer variable.
@@ -119,7 +119,7 @@ namespace Ticketing
             this.AppellantName.HeaderText = "Nom de l\'appelant";
             this.AppellantName.Name = "AppellantName";
             // 
-            // View_tickets
+            // Frm_ViewTtickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,8 +128,8 @@ namespace Ticketing
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
-            this.Name = "View_tickets";
-            this.Text = "Form1";
+            this.Name = "Frm_ViewTtickets";
+            this.Text = "Tickets";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

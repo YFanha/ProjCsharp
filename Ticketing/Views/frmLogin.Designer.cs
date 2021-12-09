@@ -91,6 +91,7 @@ namespace Ticketing
             this.Controls.Add(this.txtboxLogin);
             this.Name = "FrmLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

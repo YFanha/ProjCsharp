@@ -26,21 +26,23 @@ namespace Ticketing
             this.Close();
         }
 
-        private void FrmLogin_load(object sender, EventArgs e)
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
+
             try
             {
                 string datasource = "10.229.33.34";
                 string username = "admin";
+                string database = "ticketing";
                 string pass = "Pa$$w0rd";
                 int port = 3306;
 
 
-                connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
+                connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database={database}");
                 connection.Open();
-
+                
             }
-            catch (Exception ex)
+                catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -1,7 +1,7 @@
 ﻿
 namespace Création_tickets
 {
-    partial class Form1
+    partial class frmTicket
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,7 +35,7 @@ namespace Création_tickets
             this.lblName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mcrTicketDate = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.rtxbDesc = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,20 +44,22 @@ namespace Création_tickets
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txbName
             // 
-            this.txbName.Location = new System.Drawing.Point(34, 161);
+            this.txbName.Location = new System.Drawing.Point(36, 161);
             this.txbName.Name = "txbName";
             this.txbName.Size = new System.Drawing.Size(100, 23);
             this.txbName.TabIndex = 0;
+            this.txbName.TextChanged += new System.EventHandler(this.onNameChanged);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(88, 28);
+            this.lblTitle.Location = new System.Drawing.Point(109, 30);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(292, 42);
             this.lblTitle.TabIndex = 1;
@@ -66,10 +68,12 @@ namespace Création_tickets
             // cmbType
             // 
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(442, 140);
+            this.cmbType.Location = new System.Drawing.Point(191, 161);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 23);
+            this.cmbType.Size = new System.Drawing.Size(143, 23);
             this.cmbType.TabIndex = 2;
+            this.cmbType.Text = "Entrez votre problème";
+            this.cmbType.TextChanged += new System.EventHandler(this.onTypeChanged);
             // 
             // lblName
             // 
@@ -83,7 +87,7 @@ namespace Création_tickets
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(335, 140);
+            this.label5.Location = new System.Drawing.Point(191, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 15);
             this.label5.TabIndex = 6;
@@ -91,7 +95,7 @@ namespace Création_tickets
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(585, 374);
+            this.btnClose.Location = new System.Drawing.Point(268, 454);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 9;
@@ -99,18 +103,18 @@ namespace Création_tickets
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // monthCalendar1
+            // mcrTicketDate
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(34, 432);
-            this.monthCalendar1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.ShowToday = false;
-            this.monthCalendar1.TabIndex = 10;
+            this.mcrTicketDate.Location = new System.Drawing.Point(268, 234);
+            this.mcrTicketDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.mcrTicketDate.Name = "mcrTicketDate";
+            this.mcrTicketDate.ShowToday = false;
+            this.mcrTicketDate.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 419);
+            this.label1.Location = new System.Drawing.Point(268, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 15);
             this.label1.TabIndex = 11;
@@ -121,7 +125,7 @@ namespace Création_tickets
             this.rtxbDesc.Location = new System.Drawing.Point(34, 234);
             this.rtxbDesc.MaxLength = 300;
             this.rtxbDesc.Name = "rtxbDesc";
-            this.rtxbDesc.Size = new System.Drawing.Size(222, 131);
+            this.rtxbDesc.Size = new System.Drawing.Size(222, 164);
             this.rtxbDesc.TabIndex = 12;
             this.rtxbDesc.Text = "";
             this.rtxbDesc.TextChanged += new System.EventHandler(this.rtxbDesc_TextChanged);
@@ -138,7 +142,7 @@ namespace Création_tickets
             // lblCaractere
             // 
             this.lblCaractere.AutoSize = true;
-            this.lblCaractere.Location = new System.Drawing.Point(32, 369);
+            this.lblCaractere.Location = new System.Drawing.Point(34, 402);
             this.lblCaractere.Name = "lblCaractere";
             this.lblCaractere.Size = new System.Drawing.Size(13, 15);
             this.lblCaractere.TabIndex = 14;
@@ -148,7 +152,7 @@ namespace Création_tickets
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(84, 368);
+            this.label4.Location = new System.Drawing.Point(86, 401);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 15);
             this.label4.TabIndex = 15;
@@ -157,7 +161,7 @@ namespace Création_tickets
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 369);
+            this.label3.Location = new System.Drawing.Point(54, 402);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 15);
             this.label3.TabIndex = 16;
@@ -165,7 +169,7 @@ namespace Création_tickets
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(442, 374);
+            this.button1.Location = new System.Drawing.Point(181, 454);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -176,17 +180,28 @@ namespace Création_tickets
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(277, 419);
+            this.label6.Location = new System.Drawing.Point(364, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 15);
             this.label6.TabIndex = 18;
             this.label6.Text = "Heure de la panne";
             // 
-            // Form1
+            // timePicker
+            // 
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timePicker.Location = new System.Drawing.Point(364, 161);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(103, 23);
+            this.timePicker.TabIndex = 19;
+            this.timePicker.TabStop = false;
+            // 
+            // frmTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 646);
+            this.ClientSize = new System.Drawing.Size(496, 484);
+            this.Controls.Add(this.timePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -195,15 +210,16 @@ namespace Création_tickets
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rtxbDesc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.mcrTicketDate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txbName);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmTicket";
+            this.Text = "Création de tickets";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +233,7 @@ namespace Création_tickets
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mcrTicketDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtxbDesc;
         private System.Windows.Forms.Label label2;
@@ -226,6 +242,7 @@ namespace Création_tickets
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker timePicker;
     }
 }
 

@@ -5,8 +5,6 @@ C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création ticke
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\Création tickets.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\ref\Création tickets.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\Création tickets.pdb
-C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.csproj.AssemblyReference.cache
-C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création_tickets.Form1.resources
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.csproj.GenerateResource.cache
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.AssemblyInfoInputs.cache
@@ -16,3 +14,13 @@ C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création ticke
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\ref\Création tickets.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.pdb
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.genruntimeconfig.cache
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création_tickets.frmTicket.resources
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.csproj.CopyComplete

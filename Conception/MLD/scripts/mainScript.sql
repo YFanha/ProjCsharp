@@ -190,6 +190,7 @@ INSERT INTO categories (name) VALUES ('Hardware');
 INSERT INTO categories (name) VALUES ('Logiciel');
 INSERT INTO categories (name) VALUES ('Réseau');
 INSERT INTO categories (name) VALUES ('Inconnu');
+INSERT INTO categories (name) VALUES ('à détérminer');
 
 
 CREATE USER 'admin'@'%' IDENTIFIED BY 'Pa$$w0rd'; -- % signifie venant de partout, par seulement pour le localhost

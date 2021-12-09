@@ -15,14 +15,16 @@ namespace Ticketing
         private string _phoneNumber;
         private string _email;
         private int _rolesId;
+        private MySqlConnection _connection;
 
         public User(string email, MySqlConnection connection)
         {
+            _connection = connection;
             //Récuperer données utilisateurs depuis l'email
-            string sqlQuery = "SELECT * FROM people WHERE email =\'" + email + "\'";
-            MySqlCommand executeQuery = new MySqlCommand(sqlQuery, connection);
+            string sql = "SELECT * FROM people WHERE email =\'" + email + "\'";
+            MySqlCommand sqlQuery = new MySqlCommand(sql, connection);
 
-            MySqlDataReader reader = executeQuery.ExecuteReader();
+            MySqlDataReader reader = sqlQuery.ExecuteReader();
 
             while (reader.Read())
             {
@@ -32,6 +34,8 @@ namespace Ticketing
                 _phoneNumber = reader.GetString("phoneNumber");
                 _rolesId = int.Parse(reader.GetString("roles_id"));
             }
+
+            Ticket t = Ticket.Find(100);
         }
 
         public string Firstname
@@ -54,9 +58,24 @@ namespace Ticketing
             get { return _email; }
         }
 
-        public int Roles
+        public int RolesId
         {
             get { return _rolesId; }
+        }
+
+        public string Roles
+        {
+            get 
+            {
+                //Récupérer le nom du rôles depuis l'id
+                string sql = "SELECT name FROM roles WHERE id = " + _rolesId+ ";";
+                MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+
+                string roles = sqlQuery.ExecuteScalar()?.ToString();
+
+
+                return roles;
+            }
         }
     }
 }

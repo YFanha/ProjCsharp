@@ -54,3 +54,14 @@ C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\D
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\ref\Ticketing.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.pdb
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.genruntimeconfig.cache
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.AssemblyReference.cache
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.FrmLogin.resources
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.Frm_ViewTtickets.resources
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.GenerateResource.cache
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.AssemblyInfoInputs.cache
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.AssemblyInfo.cs
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.csproj.CoreCompileInputs.cache
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.dll
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\ref\Ticketing.dll
+C:\Users\Yann.FANHA-DIAS\Documents\GitHub\ProjCsharp\Ticketing\obj\Debug\net5.0-windows\Ticketing.pdb

@@ -14,7 +14,7 @@ namespace Ticketing
 {
     public partial class FrmLogin : Form
     {
-        MySqlConnection connection;
+        private MySqlConnection _connection;
 
         public FrmLogin()
         {
@@ -23,6 +23,7 @@ namespace Ticketing
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            _connection.Close();
             this.Close();
         }
 
@@ -31,16 +32,8 @@ namespace Ticketing
 
             try
             {
-                string datasource = "10.229.33.34";
-                string username = "admin";
-                string database = "ticketing";
-                string pass = "Pa$$w0rd";
-                int port = 3306;
-
-
-                connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database={database}");
-                connection.Open();
-                
+                _connection = DatabaseConnection.GetConnection();
+                _connection.Open();   
             }
                 catch (Exception ex)
             {
@@ -55,7 +48,7 @@ namespace Ticketing
 
                 string sqlCommand = "SELECT password FROM people WHERE email = \'" + txtboxLogin.Text + "\';";
 
-                using MySqlCommand cmd = new MySqlCommand(sqlCommand, connection);
+                using MySqlCommand cmd = new MySqlCommand(sqlCommand, _connection);
                 {
                     string psw = cmd.ExecuteScalar()?.ToString();
                     if (psw == txtboxPassword.Text)

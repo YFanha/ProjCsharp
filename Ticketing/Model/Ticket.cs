@@ -23,22 +23,21 @@ namespace Ticketing
         private DateTime _lastModifiedDate;
         private int _lastModifiedPersonId;
 
-        private static MySqlConnection _connection;
+        private MySqlConnection _connection;
 
         const int DEFAULT_STATES = 1;
         const int DEFAULT_CATEGORY = 5;
-        const int TECH_ROLES_ID = 2;
 
 
         // Constructeur pour nouveau ticket
-        public Ticket(MySqlConnection connection,string title, string description, int openingPersonId)
+        public Ticket(string title, string description, int openingPersonId)
         {
-            _connection = connection;
+            _connection = DatabaseConnection.GetConnection();
             _title = title;
             _description = description;
             _categoryId = DEFAULT_CATEGORY;
             _statesId = DEFAULT_STATES;
-            _managerId = RandomManager();
+            _managerId = Technician.RandomTechnician(); //
             _openingDate = DateTime.Now;
             _openeningPersonId = openingPersonId;
             _lastModifiedDate = DateTime.Now;
@@ -54,40 +53,22 @@ namespace Ticketing
         public static Ticket Find(int id)
         {
             string sql = "SELECT * FROM ticket WHERE id = " + id + ";";
-            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseConnection.GetConnection());
             MySqlDataReader reader = sqlQuery.ExecuteReader();
 
             while (reader.Read())
             {
                 
             }
+
+
+            throw new NotImplementedException();
         }
 
         //Enregistrer le ticket dans la base de données
         public void Save()
         {
             throw new NotImplementedException();
-        }
-
-        
-        // Get a random Manager's id
-        public int RandomManager()
-        {
-            List<int> peopleId = new List<int>();
-
-            string sql = "SELECT id FROM people WHERE roles_id = " + TECH_ROLES_ID +";";
-            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
-            MySqlDataReader reader = sqlQuery.ExecuteReader();
-
-            while (reader.Read())
-            {
-                peopleId.Add(reader.GetInt32("id"));
-            }
-
-            Random rnd = new Random();
-            int index = rnd.Next(peopleId.Count);
-
-            return peopleId[index];
         }
     }
 }

@@ -27,37 +27,13 @@ namespace Création_tickets
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timePicker.Format = DateTimePickerFormat.Time;
+            ticketHour.Format = DateTimePickerFormat.Time;
 
             
-            cmbType.Items.Add("Problème logiciel");
-            cmbType.Items.Add("Problème réseau");
-            cmbType.Items.Add("Problème système");
-            cmbType.Items.Add("Problème matériel");
-            cmbType.Items.Add("Autre problèmes");
-
-
-            /*string ticketName = txbName.Text;
-            if (cmbType.SelectedItem is not null)
-            {
-                ticketTypeProblem = cmbType.SelectedItem.ToString();
-            }
-            string ticketTime = timePicker.CustomFormat;
-            string ticketDesc = rtxbDesc.Text;
-            string ticketDate = mcrTicketDate.Text; //*/
-            
-
-      
-            
-
-            // string datasource = "10.229.33.34";
-            // string username = "admin";
-            // string pass = "Pa$$w0rd";
-            // int port = 3306;
-            //
-            //
-            // connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database=ticketing");
-            // connection.Open();
+            ticketType.Items.Add("Problème logiciel");
+            ticketType.Items.Add("Problème réseau");
+            ticketType.Items.Add("Problème système");
+            ticketType.Items.Add("Problème matériel");
 
         }
 
@@ -68,7 +44,7 @@ namespace Création_tickets
 
         private void rtxbDesc_TextChanged(object sender, EventArgs e)
         {
-            string txtcar = rtxbDesc.Text;
+            string txtcar = ticketDesc.Text;
             int length = txtcar.Length;
 
             lblCaractere.Text = length.ToString();
@@ -86,44 +62,33 @@ namespace Création_tickets
 
         private void onTypeChanged(object sender, EventArgs e)
         {
-            cmbType = ((ComboBox)sender).;
+            ticketType = (ComboBox)((ComboBox)sender);
         }
+        
+        private void onHourChanged(object sender, EventArgs e)
+        {
+            ticketHour.Value = ((DateTimePicker)sender).Value;
+        }
+        
+        private void onDescChanged(object sender, EventArgs e)
+        {
+            ticketDesc = ((RichTextBox)sender);
+        }
+        
+        private void onDateChanged(object sender, EventArgs e)
+        {
+            ticketDate = ((MonthCalendar)sender);
+        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             //string problem = "Nom du ticket : " + ticketName + "Type de problème" + ticketTypeProblem + ticketTime + ticketDesc + ticketDate;
-            string problem = "Nom du ticket : " + ticketName + " Type de problème : ";
+            string problem = "Nom du ticket : " + ticketName + " | Type de problème : " + ticketType.SelectedItem + " | Heure de la panne : " + ticketHour.Text + " | Date de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + " | Description : " + ticketDesc.Text;
             MessageBox.Show(problem); 
 
 
-            //Save();
-
-
-
-
-            //insert into db with infos
-            //connection.Open();
-
-            // string sqlCommand = "INSERT INTO client (prenom, nom, ville, age) VALUES ('Rébecca', 'Armand', 'Saint-Didier-des-Bois', 24)";
-
-
-
-
-            //using MySqlCommand cmd = new MySqlCommand(sqlCommand, connection);
-            //    {
-            //        
-            //        if()
-            //        {
-            //            
-            //        }
-            //        else
-            //        {
-            //            
-            //        }
-            //    }
-            //
-
-
+         
 
         }
 

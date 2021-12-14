@@ -31,20 +31,20 @@ namespace Création_tickets
         {
             this.txbName = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.ticketType = new System.Windows.Forms.ComboBox();
             this.lblName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.mcrTicketDate = new System.Windows.Forms.MonthCalendar();
+            this.ticketDate = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.rtxbDesc = new System.Windows.Forms.RichTextBox();
+            this.ticketDesc = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCaractere = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.timePicker = new System.Windows.Forms.DateTimePicker();
+            this.ticketHour = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txbName
@@ -65,15 +65,15 @@ namespace Création_tickets
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Création de tickets";
             // 
-            // cmbType
+            // ticketType
             // 
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(191, 161);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(143, 23);
-            this.cmbType.TabIndex = 2;
-            this.cmbType.Text = "Entrez votre problème";
-            this.cmbType.TextChanged += new System.EventHandler(this.onTypeChanged);
+            this.ticketType.FormattingEnabled = true;
+            this.ticketType.Location = new System.Drawing.Point(191, 161);
+            this.ticketType.Name = "ticketType";
+            this.ticketType.Size = new System.Drawing.Size(143, 23);
+            this.ticketType.TabIndex = 2;
+            this.ticketType.Text = "Entrez votre problème";
+            this.ticketType.TextChanged += new System.EventHandler(this.onTypeChanged);
             // 
             // lblName
             // 
@@ -103,13 +103,13 @@ namespace Création_tickets
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // mcrTicketDate
+            // ticketDate
             // 
-            this.mcrTicketDate.Location = new System.Drawing.Point(268, 234);
-            this.mcrTicketDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.mcrTicketDate.Name = "mcrTicketDate";
-            this.mcrTicketDate.ShowToday = false;
-            this.mcrTicketDate.TabIndex = 10;
+            this.ticketDate.Location = new System.Drawing.Point(268, 234);
+            this.ticketDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.ticketDate.Name = "ticketDate";
+            this.ticketDate.ShowToday = false;
+            this.ticketDate.TabIndex = 10;
             // 
             // label1
             // 
@@ -120,15 +120,15 @@ namespace Création_tickets
             this.label1.TabIndex = 11;
             this.label1.Text = "Date de la panne";
             // 
-            // rtxbDesc
+            // ticketDesc
             // 
-            this.rtxbDesc.Location = new System.Drawing.Point(34, 234);
-            this.rtxbDesc.MaxLength = 300;
-            this.rtxbDesc.Name = "rtxbDesc";
-            this.rtxbDesc.Size = new System.Drawing.Size(222, 164);
-            this.rtxbDesc.TabIndex = 12;
-            this.rtxbDesc.Text = "";
-            this.rtxbDesc.TextChanged += new System.EventHandler(this.rtxbDesc_TextChanged);
+            this.ticketDesc.Location = new System.Drawing.Point(34, 234);
+            this.ticketDesc.MaxLength = 300;
+            this.ticketDesc.Name = "ticketDesc";
+            this.ticketDesc.Size = new System.Drawing.Size(222, 164);
+            this.ticketDesc.TabIndex = 12;
+            this.ticketDesc.Text = "";
+            this.ticketDesc.TextChanged += new System.EventHandler(this.rtxbDesc_TextChanged);
             // 
             // label2
             // 
@@ -186,35 +186,35 @@ namespace Création_tickets
             this.label6.TabIndex = 18;
             this.label6.Text = "Heure de la panne";
             // 
-            // timePicker
+            // ticketHour
             // 
-            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePicker.Location = new System.Drawing.Point(364, 161);
-            this.timePicker.Name = "timePicker";
-            this.timePicker.ShowUpDown = true;
-            this.timePicker.Size = new System.Drawing.Size(103, 23);
-            this.timePicker.TabIndex = 19;
-            this.timePicker.TabStop = false;
+            this.ticketHour.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.ticketHour.Location = new System.Drawing.Point(364, 161);
+            this.ticketHour.Name = "ticketHour";
+            this.ticketHour.ShowUpDown = true;
+            this.ticketHour.Size = new System.Drawing.Size(103, 23);
+            this.ticketHour.TabIndex = 19;
+            this.ticketHour.TabStop = false;
             // 
             // frmTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 484);
-            this.Controls.Add(this.timePicker);
+            this.Controls.Add(this.ticketHour);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCaractere);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rtxbDesc);
+            this.Controls.Add(this.ticketDesc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mcrTicketDate);
+            this.Controls.Add(this.ticketDate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.cmbType);
+            this.Controls.Add(this.ticketType);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txbName);
             this.Name = "frmTicket";
@@ -229,20 +229,20 @@ namespace Création_tickets
 
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.ComboBox ticketType;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.MonthCalendar mcrTicketDate;
+        private System.Windows.Forms.MonthCalendar ticketDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox rtxbDesc;
+        private System.Windows.Forms.RichTextBox ticketDesc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCaractere;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker timePicker;
+        private System.Windows.Forms.DateTimePicker ticketHour;
     }
 }
 

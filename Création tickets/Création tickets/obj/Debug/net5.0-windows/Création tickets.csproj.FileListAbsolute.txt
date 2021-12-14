@@ -24,3 +24,4 @@ C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création ticke
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\bin\Debug\net5.0-windows\ZstdNet.dll
 C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.csproj.CopyComplete
+C:\Users\simon.cuany\OneDrive - CPNV\Documents\GitHub\ProjCsharp\Création tickets\Création tickets\obj\Debug\net5.0-windows\Création tickets.csproj.AssemblyReference.cache

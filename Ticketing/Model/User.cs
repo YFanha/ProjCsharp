@@ -22,10 +22,8 @@ namespace Ticketing
             _connection = DatabaseConnection.GetConnection();
 
             //Récuperer données utilisateurs depuis l'email
-            string sql = "SELECT * FROM people WHERE email =\'" + email + "\'";
-            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
 
-            MySqlDataReader reader = sqlQuery.ExecuteReader();
+            MySqlDataReader reader = DatabaseConnection.ReadSql("SELECT * FROM people WHERE email =\'" + email + "\'");
 
             while (reader.Read())
             {
@@ -69,11 +67,11 @@ namespace Ticketing
             get 
             {
                 //Récupérer le nom du rôles depuis l'id
-                string sql = "SELECT name FROM roles WHERE id = " + _rolesId+ ";";
+                /*string sql = "SELECT name FROM roles WHERE id = " + _rolesId+ ";";
                 MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+                string roles = sqlQuery.ExecuteScalar()?.ToString();*/
 
-                string roles = sqlQuery.ExecuteScalar()?.ToString();
-
+                string roles = DatabaseConnection.ReadFirstWordSql("SELECT name FROM roles WHERE id = " + _rolesId + ";");
 
                 return roles;
             }

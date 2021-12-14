@@ -19,13 +19,29 @@ namespace Ticketing
                 string datasource = "10.229.33.34";
                 string username = "admin";
                 string database = "ticketing";
-                string pass = "Pa$$w0rd";
+                string password = "Pa$$w0rd";
                 int port = 3306;
 
-                _connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={pass};database={database}");
+                _connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={password};database={database}");
             }
 
             return _connection;
+        }
+
+        public static MySqlDataReader ReadSql(string sql)
+        {
+            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+
+            return sqlQuery.ExecuteReader();
+        }
+
+        public static object ReadFirstWordSql(string sql)
+        {
+
+            //Récupérer le nom du rôles depuis l'id
+            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+            
+            return sqlQuery.ExecuteScalar();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Ticketing
             
         }
 
-        // Get a random Manager's id
+
         public static int RandomTechnician()
         {
             List<int> peopleId = new List<int>();

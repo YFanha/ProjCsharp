@@ -63,7 +63,7 @@ namespace Ticketing
         {
             get
             { 
-                return DatabaseInteractions.ReadNameFromTable("SELECT name FROM roles WHERE id = " + _rolesId + ";");
+                return DatabaseInteractions.ReadFirstString("SELECT name FROM roles WHERE id = " + _rolesId + ";");
             }
         }
     }

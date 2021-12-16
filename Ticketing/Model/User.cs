@@ -23,7 +23,7 @@ namespace Ticketing
 
             //Récuperer données utilisateurs depuis l'email
 
-            MySqlDataReader reader = DatabaseInteractions.ReadSql("SELECT * FROM people WHERE email =\'" + email + "\'");
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM people WHERE email =\'" + email + "\'", _connection).ExecuteReader();
 
             while (reader.Read())
             {
@@ -33,8 +33,6 @@ namespace Ticketing
                 _phoneNumber = reader.GetString("phoneNumber");
                 _rolesId = int.Parse(reader.GetString("roles_id"));
             }
-
-            Ticket t = Ticket.Find(100);
         }
 
         public string Firstname
@@ -62,18 +60,11 @@ namespace Ticketing
             get { return _rolesId; }
         }
 
-        public string Roles
+        public string Role
         {
-            get 
-            {
-                //Récupérer le nom du rôles depuis l'id
-                /*string sql = "SELECT name FROM roles WHERE id = " + _rolesId+ ";";
-                MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
-                string roles = sqlQuery.ExecuteScalar()?.ToString();*/
-
-                string roles = DatabaseInteractions.ReadFirstWordSql("SELECT name FROM roles WHERE id = " + _rolesId + ";");
-
-                return roles;
+            get
+            { 
+                return DatabaseInteractions.ReadNameFromTable("SELECT name FROM roles WHERE id = " + _rolesId + ";");
             }
         }
     }

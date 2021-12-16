@@ -28,20 +28,16 @@ namespace Ticketing
             return _connection;
         }
 
-        public static MySqlDataReader ReadSql(string sql)
-        {
-            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
 
-            return sqlQuery.ExecuteReader();
-        }
-
-        public static object ReadFirstWordSql(string sql)
+        public static string ReadNameFromTable(string sql)
         {
 
             //Récupérer le nom du rôles depuis l'id
             MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
             
-            return sqlQuery.ExecuteScalar();
+            return sqlQuery.ExecuteScalar().ToString();
         }
+
+
     }
 }

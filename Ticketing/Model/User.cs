@@ -22,7 +22,6 @@ namespace Ticketing
             _connection = DatabaseInteractions.GetConnection();
 
             //Récuperer données utilisateurs depuis l'email
-
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM people WHERE email =\'" + email + "\'", _connection).ExecuteReader();
 
             while (reader.Read())

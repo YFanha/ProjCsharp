@@ -54,19 +54,6 @@ namespace Ticketing
         {
             try
             {
-
-                string sqlCommand = "SELECT password FROM people WHERE email = \'" + txtboxLogin.Text + "\';";
-
-                using MySqlCommand cmd = new MySqlCommand(sqlCommand, _connection);
-                {
-                    string psw = cmd.ExecuteScalar()?.ToString();
-                    if (psw == txtboxPassword.Text)
-                    {
-                        MessageBox.Show("Connexion réussie !");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mot de passe incorrect !");
                 User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
                 
                 //Ouvrir page des tickets

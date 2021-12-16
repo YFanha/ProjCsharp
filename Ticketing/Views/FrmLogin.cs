@@ -30,12 +30,13 @@ namespace Ticketing
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
+            _connection = DatabaseInteractions.GetConnection();
+
             try
             {
-                _connection = DatabaseInteractions.GetConnection();
                 _connection.Open();   
             }
-                catch (Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

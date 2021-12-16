@@ -38,6 +38,10 @@ namespace Ticketing
             return sqlQuery.ExecuteScalar().ToString();
         }
 
+        public static bool SignIn(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

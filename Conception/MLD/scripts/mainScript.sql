@@ -1,8 +1,3 @@
---------------------------------------------------------
--- Script qui permet de tout recréer (base de données,
--- utilisateur et données de base)
--- -----------------------------------------------------
-
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -54,10 +49,10 @@ CREATE TABLE IF NOT EXISTS `ticketing`.`people` (
   `phoneNumber` VARCHAR(13) NULL,
   `email` VARCHAR(50) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
-  `roles_id` INT NOT NULL,
+  `role_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_people_roles`
-    FOREIGN KEY (`roles_id`)
+    FOREIGN KEY (`role_id`)
     REFERENCES `ticketing`.`roles` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -69,7 +64,7 @@ CREATE UNIQUE INDEX `uniquePerson` ON `ticketing`.`people` (`email` ASC);
 
 CREATE UNIQUE INDEX `phoneNumber_UNIQUE` ON `ticketing`.`people` (`phoneNumber` ASC);
 
-CREATE INDEX `fk_people_roles_idx` ON `ticketing`.`people` (`roles_id` ASC);
+CREATE INDEX `fk_people_roles_idx` ON `ticketing`.`people` (`role_id` ASC);
 
 
 -- -----------------------------------------------------
@@ -113,8 +108,8 @@ CREATE TABLE IF NOT EXISTS `ticketing`.`tickets` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(45) NOT NULL,
   `description` LONGTEXT NOT NULL,
-  `categories_id` INT NOT NULL,
-  `states_id` INT NOT NULL,
+  `category_id` INT NOT NULL,
+  `state_id` INT NOT NULL,
   `manager_id` INT NOT NULL,
   `openingDate` DATETIME NOT NULL,
   `openingPerson_id` INT NOT NULL,
@@ -124,12 +119,12 @@ CREATE TABLE IF NOT EXISTS `ticketing`.`tickets` (
   `lastModifiedPerson_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_tickets_categories1`
-    FOREIGN KEY (`categories_id`)
+    FOREIGN KEY (`category_id`)
     REFERENCES `ticketing`.`categories` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_tickets_states1`
-    FOREIGN KEY (`states_id`)
+    FOREIGN KEY (`state_id`)
     REFERENCES `ticketing`.`states` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
@@ -157,9 +152,9 @@ ENGINE = InnoDB;
 
 CREATE UNIQUE INDEX `id_UNIQUE` ON `ticketing`.`tickets` (`id` ASC);
 
-CREATE INDEX `fk_tickets_categories1_idx` ON `ticketing`.`tickets` (`categories_id` ASC);
+CREATE INDEX `fk_tickets_categories1_idx` ON `ticketing`.`tickets` (`category_id` ASC);
 
-CREATE INDEX `fk_tickets_states1_idx` ON `ticketing`.`tickets` (`states_id` ASC);
+CREATE INDEX `fk_tickets_states1_idx` ON `ticketing`.`tickets` (`state_id` ASC);
 
 CREATE INDEX `fk_tickets_people1_idx` ON `ticketing`.`tickets` (`openingPerson_id` ASC);
 
@@ -195,3 +190,5 @@ INSERT INTO categories (name) VALUES ('à détérminer');
 
 CREATE USER 'admin'@'%' IDENTIFIED BY 'Pa$$w0rd'; -- % signifie venant de partout, par seulement pour le localhost
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER on *.* TO 'admin'@'%'; -- *.* signifie partout (préférable de modifier)
+
+

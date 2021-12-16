@@ -23,7 +23,7 @@ namespace Ticketing
             List<int> peopleId = new List<int>();
             
             string sql = "SELECT id FROM people WHERE roles_id = " + TECH_ROLES_ID + ";";
-            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseConnection.GetConnection());
+            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseInteractions.GetConnection());
             MySqlDataReader reader = sqlQuery.ExecuteReader();
 
             while (reader.Read())

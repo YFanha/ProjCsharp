@@ -32,7 +32,7 @@ namespace Ticketing
 
             try
             {
-                _connection = DatabaseConnection.GetConnection();
+                _connection = DatabaseInteractions.GetConnection();
                 _connection.Open();   
             }
                 catch (Exception ex)

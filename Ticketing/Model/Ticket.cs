@@ -32,7 +32,7 @@ namespace Ticketing
         // Constructeur pour nouveau ticket
         public Ticket(string title, string description, int openingPersonId)
         {
-            _connection = DatabaseConnection.GetConnection();
+            _connection = DatabaseInteractions.GetConnection();
             _title = title;
             _description = description;
             _categoryId = DEFAULT_CATEGORY;
@@ -53,7 +53,7 @@ namespace Ticketing
         public static Ticket Find(int id)
         {
             string sql = "SELECT * FROM ticket WHERE id = " + id + ";";
-            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseConnection.GetConnection());
+            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseInteractions.GetConnection());
             MySqlDataReader reader = sqlQuery.ExecuteReader();
 
             while (reader.Read())

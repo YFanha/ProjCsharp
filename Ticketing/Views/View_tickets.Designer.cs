@@ -1,7 +1,7 @@
 ﻿
 namespace Ticketing
 {
-    partial class Frm_ViewTtickets
+    partial class FrmViewTtickets
     {
         /// <summary>
         ///  Required designer variable.
@@ -66,7 +66,7 @@ namespace Ticketing
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(133, 45);
             this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Logout";
+            this.btnLogout.Text = "Se déconnecter";
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -120,7 +120,7 @@ namespace Ticketing
             this.AppellantName.HeaderText = "Nom de l\'appelant";
             this.AppellantName.Name = "AppellantName";
             // 
-            // Frm_ViewTtickets
+            // FrmViewTtickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,9 @@ namespace Ticketing
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
-            this.Name = "Frm_ViewTtickets";
+            this.Name = "FrmViewTtickets";
             this.Text = "Tickets";
+            this.Load += new System.EventHandler(this.FrmViewTtickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -36,9 +36,17 @@ namespace Ticketing
             {
                 _connection.Open();   
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Impossible de se connecter au serveur, contactez l'administrateur.");
+                        break;
+                    default:
+                        MessageBox.Show("L'erreur suivante est survenue, contactez l'administrateur : \n" + ex.Number.ToString() + " : " + ex.Message);
+                        break;
+                }
             }
         }
 

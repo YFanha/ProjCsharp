@@ -33,6 +33,7 @@ namespace Ticketing
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblConnectionError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtboxLogin
@@ -80,11 +81,22 @@ namespace Ticketing
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblConnectionError
+            // 
+            this.lblConnectionError.AutoSize = true;
+            this.lblConnectionError.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblConnectionError.ForeColor = System.Drawing.Color.Red;
+            this.lblConnectionError.Location = new System.Drawing.Point(283, 224);
+            this.lblConnectionError.Name = "lblConnectionError";
+            this.lblConnectionError.Size = new System.Drawing.Size(0, 15);
+            this.lblConnectionError.TabIndex = 5;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblConnectionError);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtboxPassword);
@@ -103,5 +115,6 @@ namespace Ticketing
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.TextBox txtboxPassword;
+        private System.Windows.Forms.Label lblConnectionError;
     }
 }

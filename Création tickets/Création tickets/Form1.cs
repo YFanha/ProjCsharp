@@ -11,10 +11,7 @@ using MySql.Data.MySqlClient;
 
 
 namespace Création_tickets
-{
-
-
-
+{ 
     public partial class frmTicket : Form
     {
         string ticketTypeProblem;
@@ -83,15 +80,16 @@ namespace Création_tickets
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string problem = "Nom du ticket : " + ticketName + "Type de problème" + ticketTypeProblem + ticketTime + ticketDesc + ticketDate;
             string problem = "Nom du ticket : " + ticketName + " | Type de problème : " + ticketType.SelectedItem + " | Heure de la panne : " + ticketHour.Text + " | Date de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + " | Description : " + ticketDesc.Text;
-            MessageBox.Show(problem); 
+            MessageBox.Show(problem);
+            //INSERT INTO people () VALUES 
 
 
-         
+
+
 
         }
 
-        
+
     }
 }

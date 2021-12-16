@@ -66,5 +66,15 @@ namespace Ticketing
                 return DatabaseInteractions.ReadFirstString("SELECT name FROM roles WHERE id = " + _rolesId + ";");
             }
         }
+
+        public static void SignIn(string email, string password)
+        {
+            string correctPassword = DatabaseInteractions.ReadFirstString("SELECT password FROM people WHERE email = \'" + email + "\';");
+
+            if (password != correctPassword)
+            {
+                throw new BadPasswordException();
+            }
+        }
     }
 }

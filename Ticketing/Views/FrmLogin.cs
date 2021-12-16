@@ -59,13 +59,13 @@ namespace Ticketing
                     else
                     {
                         MessageBox.Show("Mot de passe incorrect !");
-                    }
-                }
+                User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
+                
+                //Ouvrir page des tickets
             }
-
-            catch (Exception ex)
+            catch (BadPasswordException ex)
             {
-                Console.WriteLine(ex.ToString());
+                lblConnectionError.Text = ex.Message;
             }
 
         }

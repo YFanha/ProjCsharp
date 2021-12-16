@@ -1,2 +1,4 @@
-Ticketing/obj/**
-Ticketing/.vs/**
+**/obj/**
+**/.vs/**
+**/bin/**
+**/*.csproj.user

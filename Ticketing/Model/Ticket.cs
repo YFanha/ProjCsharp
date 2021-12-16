@@ -113,11 +113,33 @@ namespace Ticketing
         //Enregistrer le ticket dans la base de données
         public void Save()
         {
-            MySqlCommand sqlQuery = new MySqlCommand("", _connection);
-            try
-            {
-                
-            }
+            MySqlCommand InsertCommand = new MySqlCommand();
+
+            string stringQuery = "INSERT INTO tickets (@col_title, @col_description, @col_category_id, @col_state_id, @col_manager_id, @col_openingDate, @col_openingPerson_id, @col_lastModifiedDate, @col_lastmodifiedPerson_id) VALUES(@title, @description, @category, @state, @manager , @openingDate, @openingPerson, @lastModifiedDate, @lastModifiedPerson);";
+            InsertCommand.CommandText = stringQuery;
+
+            //Remplacer variable par les valeurs
+            InsertCommand.Parameters.AddWithValue("@col_title", TITLE);
+            InsertCommand.Parameters.AddWithValue("@col_description", DESCRIPTION);
+            InsertCommand.Parameters.AddWithValue("@col_category", CATEGORY);
+            InsertCommand.Parameters.AddWithValue("@col_state", STATE);
+            InsertCommand.Parameters.AddWithValue("@col_manager", MANAGER);
+            InsertCommand.Parameters.AddWithValue("@col_openingDate", OPENING_DATE);
+            InsertCommand.Parameters.AddWithValue("@col_openingPerson", OPENING_PERSON);
+            InsertCommand.Parameters.AddWithValue("@col_lastModifiedDate", LAST_MODIFIED_DATE);
+            InsertCommand.Parameters.AddWithValue("@col_lastModifiedPerson", LAST_MODIFIED_PERSON);
+
+            InsertCommand.Parameters.AddWithValue("@title", _title);
+            InsertCommand.Parameters.AddWithValue("@description", _description);
+            InsertCommand.Parameters.AddWithValue("@category", _categoryId);
+            InsertCommand.Parameters.AddWithValue("@state", _statesId);
+            InsertCommand.Parameters.AddWithValue("@manager", _managerId);
+            InsertCommand.Parameters.AddWithValue("@openingDate", _openingDate);
+            InsertCommand.Parameters.AddWithValue("@openingPerson", _openeningPersonId);
+            InsertCommand.Parameters.AddWithValue("@lastModifiedDate", _lastModifiedDate);
+            InsertCommand.Parameters.AddWithValue("@lastModifiedPerson", _lastModifiedPersonId);
+
+            InsertCommand.ExecuteNonQuery();
         }
     }
 }

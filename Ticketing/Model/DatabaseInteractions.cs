@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace Ticketing
 {
-    public class DatabaseConnection
+    public class DatabaseInteractions
     {
         private static MySqlConnection _connection;
 

@@ -32,107 +32,127 @@ namespace Ticketing
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.TicketNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TicketDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TicketCategories = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TicketDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TicketCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.TicketState = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.AppellantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.TicketManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(191, 12);
+            this.btnDelete.Location = new System.Drawing.Point(218, 16);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(133, 45);
+            this.btnDelete.Size = new System.Drawing.Size(152, 60);
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Supprimer un ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(330, 12);
+            this.btnAdd.Location = new System.Drawing.Point(377, 16);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(133, 45);
+            this.btnAdd.Size = new System.Drawing.Size(152, 60);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Ajouter un ticket";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(469, 12);
+            this.btnLogout.Location = new System.Drawing.Point(536, 16);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(133, 45);
+            this.btnLogout.Size = new System.Drawing.Size(152, 60);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Se déconnecter";
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvTickets
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TicketNumber,
-            this.TicketDescription,
             this.TicketTitle,
-            this.TicketCategories,
+            this.TicketDescription,
+            this.TicketCategory,
             this.TicketState,
-            this.AppellantName});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 140);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1161, 150);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.TicketManager});
+            this.dgvTickets.Location = new System.Drawing.Point(14, 187);
+            this.dgvTickets.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvTickets.Name = "dgvTickets";
+            this.dgvTickets.RowHeadersWidth = 51;
+            this.dgvTickets.RowTemplate.Height = 25;
+            this.dgvTickets.Size = new System.Drawing.Size(1327, 200);
+            this.dgvTickets.TabIndex = 3;
+            this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
             // 
             // TicketNumber
             // 
             this.TicketNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.TicketNumber.HeaderText = "Numéro du ticket";
+            this.TicketNumber.MinimumWidth = 6;
             this.TicketNumber.Name = "TicketNumber";
-            this.TicketNumber.Width = 88;
-            // 
-            // TicketDescription
-            // 
-            this.TicketDescription.HeaderText = "Description";
-            this.TicketDescription.Name = "TicketDescription";
+            this.TicketNumber.Width = 108;
             // 
             // TicketTitle
             // 
             this.TicketTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.TicketTitle.HeaderText = "Titre du ticket";
+            this.TicketTitle.MinimumWidth = 6;
             this.TicketTitle.Name = "TicketTitle";
-            this.TicketTitle.Width = 96;
+            this.TicketTitle.Width = 119;
             // 
-            // TicketCategories
+            // TicketDescription
             // 
-            this.TicketCategories.HeaderText = "Categorie";
-            this.TicketCategories.Name = "TicketCategories";
+            this.TicketDescription.HeaderText = "Description";
+            this.TicketDescription.MinimumWidth = 6;
+            this.TicketDescription.Name = "TicketDescription";
+            this.TicketDescription.Width = 125;
+            // 
+            // TicketCategory
+            // 
+            this.TicketCategory.HeaderText = "Catégorie";
+            this.TicketCategory.Items.AddRange(new object[] {
+            "Test",
+            "Test1",
+            "Test2"});
+            this.TicketCategory.MinimumWidth = 6;
+            this.TicketCategory.Name = "TicketCategory";
+            this.TicketCategory.Width = 125;
             // 
             // TicketState
             // 
-            this.TicketState.HeaderText = "État du ticket";
+            this.TicketState.HeaderText = "État";
+            this.TicketState.MinimumWidth = 6;
             this.TicketState.Name = "TicketState";
+            this.TicketState.Width = 125;
             // 
-            // AppellantName
+            // TicketManager
             // 
-            this.AppellantName.HeaderText = "Nom de l\'appelant";
-            this.AppellantName.Name = "AppellantName";
+            this.TicketManager.HeaderText = "Responsable";
+            this.TicketManager.MinimumWidth = 6;
+            this.TicketManager.Name = "TicketManager";
+            this.TicketManager.Width = 125;
             // 
             // FrmViewTtickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 541);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1386, 721);
+            this.Controls.Add(this.dgvTickets);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmViewTtickets";
             this.Text = "Tickets";
             this.Load += new System.EventHandler(this.FrmViewTtickets_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,13 +162,13 @@ namespace Ticketing
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TicketDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketTitle;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TicketCategories;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TicketDescription;
+        private System.Windows.Forms.DataGridViewComboBoxColumn TicketCategory;
         private System.Windows.Forms.DataGridViewComboBoxColumn TicketState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AppellantName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
     }
 }
 

@@ -32,6 +32,8 @@ namespace Ticketing
                 _phoneNumber = reader.GetString("phoneNumber");
                 _rolesId = int.Parse(reader.GetString("roles_id"));
             }
+
+            reader.Close();
         }
 
         public string Firstname

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace Ticketing
 {
@@ -21,6 +23,17 @@ namespace Ticketing
 
         private void FrmViewTtickets_Load(object sender, EventArgs e)
         {
+            List<State> states = State.FindAll();
+            ComboBox cmbState = new ComboBox();
+
+            foreach(State state in states)
+            {
+                cmbState.Items.Add(state);
+            }
+
+            ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketState"]).DataSource = cmbState.Items;
+
+
             _tickets = new List<Ticket>();
             _tickets = Ticket.FindAll();
 

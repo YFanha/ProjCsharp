@@ -66,7 +66,7 @@ namespace Ticketing
             _description = description;
             _categoryId = category_id;
             _statesId = state_id;
-            _managerId = Technician.RandomTechnician(); //
+            _managerId = manager_id; //
             _openingDate = opening;
             _openeningPersonId = openingPerson;
             _closingDate = closing;
@@ -75,11 +75,39 @@ namespace Ticketing
             _lastModifiedPersonId = lastModifiedPerson;
         }
 
+        public static List<Ticket> FindAll()
+        {
+            MySqlDataReader reader = new MySqlCommand("SELECT * from tickets", DatabaseInteractions.GetConnection()).ExecuteReader();
+            List<Ticket> ticketsList = new List<Ticket>();
+            while (reader.Read())
+            {
+                Ticket newTicket = GetTicketFromReader(reader);
+                ticketsList.Add(newTicket);
+            }
+            reader.Close();
+
+            return ticketsList;
+        }
+
         //Trouver les données d'un ticket grace à son id
         public static Ticket Find(int id)
         {
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM ticket WHERE id = " + id + ";", DatabaseInteractions.GetConnection()).ExecuteReader();
 
+            Ticket ticket = null;
+
+            while (reader.Read())
+            {
+                ticket = GetTicketFromReader(reader);
+            }
+            reader.Close();
+
+            return ticket;
+        }
+
+        private static Ticket GetTicketFromReader(MySqlDataReader reader)
+        {
+            int id = 0;
             string title = null;
             string description = null;
 
@@ -93,20 +121,21 @@ namespace Ticketing
             DateTime lastmodified = DateTime.Now;
             int lastmodifiedPerson = 0;
 
-            while (reader.Read())
+            id = reader.GetInt32(ID);
+            title = reader.GetString(TITLE);
+            description = reader.GetString(DESCRIPTION);
+            category_id = reader.GetInt32(CATEGORY);
+            state_id = reader.GetInt32(STATE);
+            manager_id = reader.GetInt32(MANAGER);
+            opening = reader.GetDateTime(OPENING_DATE);
+            openingPerson = reader.GetInt32(OPENING_PERSON);
+            if (!reader.IsDBNull(8))
             {
-                title = reader.GetString(TITLE);
-                description = reader.GetString(DESCRIPTION);
-                category_id = reader.GetInt32(CATEGORY);
-                state_id = reader.GetInt32(STATE);
-                manager_id = reader.GetInt32(MANAGER);
-                opening = reader.GetDateTime(OPENING_DATE);
-                openingPerson = reader.GetInt32(OPENING_PERSON);
                 closing = reader.GetDateTime(CLOSING_DATE);
                 closingPerson = reader.GetInt32(CLOSING_PERSON);
-                lastmodified = reader.GetDateTime(LAST_MODIFIED_DATE);
-                lastmodifiedPerson = reader.GetInt32(LAST_MODIFIED_PERSON);
             }
+            lastmodified = reader.GetDateTime(LAST_MODIFIED_DATE);
+            lastmodifiedPerson = reader.GetInt32(LAST_MODIFIED_PERSON);
 
             return new Ticket(id, title, description, category_id, state_id, manager_id, opening, openingPerson, closing, closingPerson, lastmodified, lastmodifiedPerson);
         }
@@ -141,19 +170,6 @@ namespace Ticketing
             InsertCommand.Parameters.AddWithValue("@lastModifiedPerson", _lastModifiedPersonId);
 
             InsertCommand.ExecuteNonQuery();
-        }
-
-        public static List<Ticket> FindAll()
-        {
-            MySqlDataReader reader = new MySqlCommand("SELECT id from tickets", DatabaseInteractions.GetConnection()).ExecuteReader();
-            List<Ticket> ticketsList = new List<Ticket>();
-            while (reader.Read())
-            {
-                Ticket newTicket = Ticket.Find(reader.GetInt32(ID));
-                ticketsList.Add(newTicket);
-            }
-
-            return ticketsList;
         }
     }
 }

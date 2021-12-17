@@ -28,6 +28,10 @@ namespace Ticketing
 
                 _connection = new MySqlConnection($"datasource={datasource};port={port};username={username};password={password};database={database}");
             }
+            /*if(_connection.State == System.Data.ConnectionState.Closed )
+            {
+                _connection.Open();
+            } //*/
 
             return _connection;
         }

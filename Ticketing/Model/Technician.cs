@@ -30,6 +30,7 @@ namespace Ticketing
             {
                 peopleId.Add(reader.GetInt32("id"));
             }
+            reader.Close();
 
             Random rnd = new Random();
             int index = rnd.Next(peopleId.Count);

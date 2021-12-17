@@ -70,7 +70,7 @@ namespace Ticketing
         public static void SignIn(string email, string password)
         {
             string correctPassword = DatabaseInteractions.ReadFirstString("SELECT password FROM people WHERE email = \'" + email + "\';");
-
+            
             if (password != correctPassword)
             {
                 throw new BadPasswordException();

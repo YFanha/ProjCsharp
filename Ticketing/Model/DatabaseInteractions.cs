@@ -35,10 +35,7 @@ namespace Ticketing
 
         public static string ReadFirstString(string sql)
         {
-
-            //Récupérer le nom du rôles depuis l'id
             MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
-            
             return sqlQuery.ExecuteScalar()?.ToString();
         }
 

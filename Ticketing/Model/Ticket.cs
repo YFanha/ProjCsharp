@@ -110,7 +110,6 @@ namespace Ticketing
             int id = 0;
             string title = null;
             string description = null;
-
             int category_id = 0;
             int state_id = 0;
             int manager_id = 0;

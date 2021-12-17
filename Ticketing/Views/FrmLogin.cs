@@ -38,15 +38,8 @@ namespace Ticketing
             }
             catch (MySqlException ex)
             {
-                switch (ex.Number)
-                {
-                    case 0:
-                        MessageBox.Show("Impossible de se connecter au serveur, contactez l'administrateur.");
-                        break;
-                    default:
-                        MessageBox.Show("L'erreur suivante est survenue, contactez l'administrateur : \n" + ex.Number.ToString() + " : " + ex.Message);
-                        break;
-                }
+                MessageBox.Show("L'erreur suivante est survenue, contactez l'administrateur : \n" + ex.Number.ToString() + " : " + ex.Message);
+
                 btnConnexion.Enabled = false;
                 lblConnectionError.Text = "Impossible de se connecter au serveur.";
             }

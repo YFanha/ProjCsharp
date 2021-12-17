@@ -47,6 +47,8 @@ namespace Ticketing
                         MessageBox.Show("L'erreur suivante est survenue, contactez l'administrateur : \n" + ex.Number.ToString() + " : " + ex.Message);
                         break;
                 }
+                btnConnexion.Enabled = false;
+                lblConnectionError.Text = "Impossible de se connecter au serveur.";
             }
         }
 
@@ -55,11 +57,16 @@ namespace Ticketing
             try
             {
                 User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
-                
+
                 //Ouvrir page des tickets
+                FrmViewTtickets frmViewTickets = new FrmViewTtickets();
+                Hide();
+                frmViewTickets.ShowDialog();
+                Show();
             }
             catch (BadPasswordException ex)
             {
+                
                 lblConnectionError.Text = ex.Message;
             }
 

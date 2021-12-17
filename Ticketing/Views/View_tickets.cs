@@ -10,14 +10,29 @@ using System.Windows.Forms;
 
 namespace Ticketing
 {
-    public partial class Frm_ViewTtickets : Form
+    public partial class FrmViewTtickets : Form
     {
-        public Frm_ViewTtickets()
+        private List<Ticket> _tickets;
+
+        public FrmViewTtickets()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FrmViewTtickets_Load(object sender, EventArgs e)
+        {
+            _tickets = new List<Ticket>();
+            _tickets = Ticket.FindAll();
+
+            foreach(Ticket ticket in _tickets)
+            {
+                int newRowIndex = dgvTickets.Rows.Add();
+
+                DataGridViewRow newRow = dgvTickets.Rows[newRowIndex];
+            }
+        }
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -36,9 +36,12 @@ namespace Ticketing
             {
                 _connection.Open();   
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("L'erreur suivante est survenue, contactez l'administrateur : \n" + ex.Number.ToString() + " : " + ex.Message);
+
+                btnConnexion.Enabled = false;
+                lblConnectionError.Text = "Impossible de se connecter au serveur.";
             }
         }
 
@@ -46,26 +49,18 @@ namespace Ticketing
         {
             try
             {
+                User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
 
-                string sqlCommand = "SELECT password FROM people WHERE email = \'" + txtboxLogin.Text + "\';";
-
-                using MySqlCommand cmd = new MySqlCommand(sqlCommand, _connection);
-                {
-                    string psw = cmd.ExecuteScalar()?.ToString();
-                    if (psw == txtboxPassword.Text)
-                    {
-                        MessageBox.Show("Connexion réussie !");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mot de passe incorrect !");
-                    }
-                }
+                //Ouvrir page des tickets
+                FrmViewTtickets frmViewTickets = new FrmViewTtickets();
+                Hide();
+                frmViewTickets.ShowDialog();
+                Show();
             }
-
-            catch (Exception ex)
+            catch (BadPasswordException ex)
             {
-                Console.WriteLine(ex.ToString());
+                
+                lblConnectionError.Text = ex.Message;
             }
 
         }

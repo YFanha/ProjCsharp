@@ -33,35 +33,40 @@ namespace Ticketing
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblConnectionError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtboxLogin
             // 
-            this.txtboxLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtboxLogin.Location = new System.Drawing.Point(283, 121);
+            this.txtboxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtboxLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtboxLogin.Location = new System.Drawing.Point(323, 161);
+            this.txtboxLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtboxLogin.Name = "txtboxLogin";
-            this.txtboxLogin.Size = new System.Drawing.Size(209, 29);
+            this.txtboxLogin.Size = new System.Drawing.Size(238, 34);
             this.txtboxLogin.TabIndex = 1;
             this.txtboxLogin.Text = "Email";
-            this.txtboxLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtboxPassword
             // 
+            this.txtboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtboxPassword.Location = new System.Drawing.Point(283, 192);
+            this.txtboxPassword.Location = new System.Drawing.Point(323, 256);
+            this.txtboxPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtboxPassword.Name = "txtboxPassword";
-            this.txtboxPassword.Size = new System.Drawing.Size(209, 29);
+            this.txtboxPassword.Size = new System.Drawing.Size(238, 34);
             this.txtboxPassword.TabIndex = 2;
             this.txtboxPassword.Text = "Mot de passe";
-            this.txtboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtboxPassword.UseSystemPasswordChar = true;
             // 
             // btnConnexion
             // 
+            this.btnConnexion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConnexion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConnexion.Location = new System.Drawing.Point(283, 280);
+            this.btnConnexion.Location = new System.Drawing.Point(323, 373);
+            this.btnConnexion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConnexion.Name = "btnConnexion";
-            this.btnConnexion.Size = new System.Drawing.Size(209, 39);
+            this.btnConnexion.Size = new System.Drawing.Size(239, 52);
             this.btnConnexion.TabIndex = 3;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -70,25 +75,41 @@ namespace Ticketing
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(12, 412);
+            this.btnClose.Location = new System.Drawing.Point(14, 549);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(96, 26);
+            this.btnClose.Size = new System.Drawing.Size(110, 35);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Fermer";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblConnectionError
+            // 
+            this.lblConnectionError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblConnectionError.AutoSize = true;
+            this.lblConnectionError.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblConnectionError.ForeColor = System.Drawing.Color.Red;
+            this.lblConnectionError.Location = new System.Drawing.Point(323, 299);
+            this.lblConnectionError.Name = "lblConnectionError";
+            this.lblConnectionError.Size = new System.Drawing.Size(0, 20);
+            this.lblConnectionError.TabIndex = 5;
+            // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.lblConnectionError);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.txtboxLogin);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
@@ -103,5 +124,6 @@ namespace Ticketing
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.TextBox txtboxPassword;
+        private System.Windows.Forms.Label lblConnectionError;
     }
 }

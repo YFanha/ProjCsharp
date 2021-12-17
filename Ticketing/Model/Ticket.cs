@@ -29,6 +29,7 @@ namespace Ticketing
         const int DEFAULT_CATEGORY = 5;
 
         //Nom des colonnes
+        const string ID = "id";
         const string TITLE = "title";
         const string DESCRIPTION = "description";
         const string CATEGORY = "category_id";
@@ -140,6 +141,19 @@ namespace Ticketing
             InsertCommand.Parameters.AddWithValue("@lastModifiedPerson", _lastModifiedPersonId);
 
             InsertCommand.ExecuteNonQuery();
+        }
+
+        public static List<Ticket> FindAll()
+        {
+            MySqlDataReader reader = new MySqlCommand("SELECT id from tickets", DatabaseInteractions.GetConnection()).ExecuteReader();
+            List<Ticket> ticketsList = new List<Ticket>();
+            while (reader.Read())
+            {
+                Ticket newTicket = Ticket.Find(reader.GetInt32(ID));
+                ticketsList.Add(newTicket);
+            }
+
+            return ticketsList;
         }
     }
 }

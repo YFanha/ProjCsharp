@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Création_tickets;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -48,6 +49,13 @@ namespace Ticketing
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmTicket frmTicket = new frmTicket();
+            frmTicket.ShowDialog();
+            
         }
     }
 }

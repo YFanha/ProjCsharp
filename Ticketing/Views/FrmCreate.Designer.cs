@@ -42,7 +42,7 @@ namespace Création_tickets
             this.lblCaractere = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.ticketHour = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -167,15 +167,15 @@ namespace Création_tickets
             this.label3.TabIndex = 16;
             this.label3.Text = "/ 300";
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.Location = new System.Drawing.Point(181, 454);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Envoyer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSend.Location = new System.Drawing.Point(181, 454);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 17;
+            this.btnSend.Text = "Envoyer";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label6
             // 
@@ -203,7 +203,7 @@ namespace Création_tickets
             this.ClientSize = new System.Drawing.Size(514, 492);
             this.Controls.Add(this.ticketHour);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblCaractere);
@@ -240,7 +240,7 @@ namespace Création_tickets
         private System.Windows.Forms.Label lblCaractere;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker ticketHour;
     }

@@ -122,10 +122,6 @@ namespace Ticketing
             // TicketCategory
             // 
             this.TicketCategory.HeaderText = "Catégorie";
-            this.TicketCategory.Items.AddRange(new object[] {
-            "Test",
-            "Test1",
-            "Test2"});
             this.TicketCategory.MinimumWidth = 6;
             this.TicketCategory.Name = "TicketCategory";
             this.TicketCategory.Width = 125;

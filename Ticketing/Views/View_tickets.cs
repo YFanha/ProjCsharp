@@ -29,7 +29,7 @@ namespace Ticketing
 
             foreach(State state in states)
             {
-                cmbState.Items.Add(state);
+                cmbState.Items.Add(state.Name);
             }
 
             ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketState"]).DataSource = cmbState.Items;

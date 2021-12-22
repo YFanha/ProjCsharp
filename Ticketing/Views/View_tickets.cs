@@ -24,6 +24,7 @@ namespace Ticketing
 
         private void FrmViewTtickets_Load(object sender, EventArgs e)
         {
+            //Get all states
             List<State> states = State.FindAll();
             ComboBox cmbState = new ComboBox();
 
@@ -31,8 +32,17 @@ namespace Ticketing
             {
                 cmbState.Items.Add(state.Name);
             }
-
             ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketState"]).DataSource = cmbState.Items;
+
+            //Get all categories
+            List<Category> categories = Category.FindAll();
+            ComboBox cmbCategory = new ComboBox();
+
+            foreach(Category category in categories)
+            {
+                cmbCategory.Items.Add(category.Name);
+            }
+            ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketCategory"]).DataSource = cmbState.Items;
 
 
             _tickets = new List<Ticket>();

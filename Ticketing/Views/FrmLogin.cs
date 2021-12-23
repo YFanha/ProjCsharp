@@ -55,6 +55,8 @@ namespace Ticketing
                 FrmViewTtickets frmViewTickets = new FrmViewTtickets();
                 Hide();
                 frmViewTickets.ShowDialog();
+                txtboxLogin.Text = "";
+                txtboxPassword.Text = "";
                 Show();
             }
             catch (BadPasswordException ex)

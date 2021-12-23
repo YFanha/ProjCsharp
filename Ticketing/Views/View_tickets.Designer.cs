@@ -73,6 +73,7 @@ namespace Ticketing
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Se déconnecter";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // dgvTickets
             // 

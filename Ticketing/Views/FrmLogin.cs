@@ -57,6 +57,8 @@ namespace Ticketing
                 Hide();
                 frmViewTickets.User = UserConnected;
                 frmViewTickets.ShowDialog();
+                txtboxLogin.Text = "";
+                txtboxPassword.Text = "";
                 Show();
             }
             catch (BadPasswordException ex)

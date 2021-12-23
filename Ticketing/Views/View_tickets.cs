@@ -81,5 +81,11 @@ namespace Ticketing
             frmTicket.ShowDialog();
             
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
     }
 }

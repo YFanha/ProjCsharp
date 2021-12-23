@@ -170,5 +170,95 @@ namespace Ticketing
 
             InsertCommand.ExecuteNonQuery();
         }
+
+        
+
+        //Getter/Setter des variables
+        public int Id
+        {
+            get { return _id; }
+        }
+
+        public string Title
+        {
+            get { return _title; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        public int CategoryId
+        {
+            get { return _categoryId; }
+        }
+        public string Category
+        {
+            get { return DatabaseInteractions.ReadFirstString("SELECT name FROM categories WHERE id = " + CategoryId + ";"); }
+        }
+
+        public int StatesId
+        {
+            get { return _statesId; }
+        }
+
+        public string State
+        {
+            get { return DatabaseInteractions.ReadFirstString("SELECT name FROM states WHERE id = " + StatesId + ";"); }
+        }
+
+        public int ManagerId
+        {
+            get { return _managerId; }
+        }
+        public string Manager
+        {
+            get { return User.GetFullName(ManagerId); }
+        }
+
+        public DateTime OpeningDate
+        {
+            get { return _openingDate; }
+        }
+
+        public int OpeningPersonId
+        {
+            get { return _openeningPersonId; }
+        }
+        public string OpeningPerson
+        {
+            get { return User.GetFullName(OpeningPersonId); }
+        }
+
+        public DateTime ClosingDate
+        {
+            get { return _closingDate; }
+        }
+
+        public int ClosingPersonId
+        {
+            get { return _closingPersonId; }
+        }
+
+        public string ClosingPerson
+        {
+            get { return User.GetFullName(ClosingPersonId); }
+        }
+
+        public DateTime LastModifiedDate
+        {
+            get { return _lastModifiedDate; }
+        }
+
+        public int LastModifiedPersonId
+        {
+            get { return _lastModifiedPersonId; }
+        }
+
+        public string LastModifiedPerson
+        {
+            get { return User.GetFullName(LastModifiedPersonId); }
+        }
     }
 }

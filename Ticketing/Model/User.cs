@@ -78,5 +78,20 @@ namespace Ticketing
                 throw new BadPasswordException();
             }
         }
+
+        public static string GetFullName(int id)
+        {
+            string fullName = "";
+            MySqlDataReader reader = new MySqlCommand("SELECT lastname, firstname FROM people WHERE id =\'" + id + "\'", DatabaseInteractions.GetConnection()).ExecuteReader();
+
+            while (reader.Read())
+            {
+                fullName += reader.GetString("lastname") + " ";
+                fullName += reader.GetString("firstname");
+            }
+            reader.Close();
+            return fullName;
+
+        }
     }
 }

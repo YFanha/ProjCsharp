@@ -42,7 +42,7 @@ namespace Ticketing
             {
                 cmbCategory.Items.Add(category.Name);
             }
-            ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketCategory"]).DataSource = cmbState.Items;
+            ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketCategory"]).DataSource = cmbCategory.Items;
 
 
             _tickets = new List<Ticket>();
@@ -53,6 +53,17 @@ namespace Ticketing
                 int newRowIndex = dgvTickets.Rows.Add();
 
                 DataGridViewRow newRow = dgvTickets.Rows[newRowIndex];
+
+                newRow.Cells["TicketNumber"].Value = ticket.Id; 
+                newRow.Cells["TicketTitle"].Value = ticket.Title; 
+                newRow.Cells["TicketDescription"].Value = ticket.Description; 
+                //newRow.Cells["TicketCategory"].Value = ticket.CategoryId; 
+                //newRow.Cells["TicketState"].Value = ticket.StatesId; 
+                newRow.Cells["openingDate"].Value = ticket.OpeningDate; 
+                newRow.Cells["openingPerson"].Value = ticket.OpeningPerson; 
+                newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate; 
+                newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson; 
+                newRow.Cells["TicketManager"].Value = ticket.Manager; 
             }
         }
 

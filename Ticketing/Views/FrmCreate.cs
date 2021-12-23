@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using Ticketing;
 
 namespace Création_tickets
 { 
     public partial class frmTicket : Form
     {
-        string ticketTypeProblem;
-        string ticketName;
+        private string ticketTypeProblem;
+        private string ticketName;
+        public User User;
 
         public frmTicket()
         {

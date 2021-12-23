@@ -15,6 +15,8 @@ namespace Ticketing
 {
     public partial class FrmViewTtickets : Form
     {
+        public User User;
+
         private List<Ticket> _tickets;
 
         public FrmViewTtickets()
@@ -64,7 +66,7 @@ namespace Ticketing
                 newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate; 
                 newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson; 
                 newRow.Cells["TicketManager"].Value = ticket.Manager; 
-            }
+            }§
         }
 
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -75,6 +77,7 @@ namespace Ticketing
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmTicket frmTicket = new frmTicket();
+            frmTicket.User = this.User;
             frmTicket.ShowDialog();
             
         }

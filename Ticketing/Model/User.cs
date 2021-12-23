@@ -69,7 +69,7 @@ namespace Ticketing
             }
         }
 
-        public static void SignIn(string email, string password)
+        public static User SignIn(string email, string password)
         {
             string correctPassword = DatabaseInteractions.ReadFirstString("SELECT password FROM people WHERE email = \'" + email + "\';");
             
@@ -77,6 +77,8 @@ namespace Ticketing
             {
                 throw new BadPasswordException();
             }
+
+            return new User(email);
         }
 
         public static string GetFullName(int id)

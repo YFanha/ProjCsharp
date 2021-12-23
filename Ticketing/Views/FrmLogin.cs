@@ -15,6 +15,7 @@ namespace Ticketing
     public partial class FrmLogin : Form
     {
         private MySqlConnection _connection;
+        public User UserConnected;
 
         public FrmLogin()
         {
@@ -49,11 +50,12 @@ namespace Ticketing
         {
             try
             {
-                User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
+                UserConnected = User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
 
                 //Ouvrir page des tickets
                 FrmViewTtickets frmViewTickets = new FrmViewTtickets();
                 Hide();
+                frmViewTickets.User = UserConnected;
                 frmViewTickets.ShowDialog();
                 Show();
             }

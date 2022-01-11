@@ -54,6 +54,7 @@ namespace Ticketing
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Supprimer un ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 

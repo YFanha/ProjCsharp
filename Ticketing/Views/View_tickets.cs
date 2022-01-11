@@ -46,7 +46,7 @@ namespace Ticketing
             }
             ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketCategory"]).DataSource = cmbCategory.Items;
 
-
+            //Get tickets
             _tickets = new List<Ticket>();
             _tickets = Ticket.FindAll();
 
@@ -59,14 +59,14 @@ namespace Ticketing
                 newRow.Cells["TicketNumber"].Value = ticket.Id; 
                 newRow.Cells["TicketTitle"].Value = ticket.Title; 
                 newRow.Cells["TicketDescription"].Value = ticket.Description; 
-                //newRow.Cells["TicketCategory"].Value = ticket.CategoryId; 
-                //newRow.Cells["TicketState"].Value = ticket.StatesId; 
+                newRow.Cells["TicketCategory"].Value = ticket.Category; 
+                newRow.Cells["TicketState"].Value = ticket.State; 
                 newRow.Cells["openingDate"].Value = ticket.OpeningDate; 
                 newRow.Cells["openingPerson"].Value = ticket.OpeningPerson; 
                 newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate; 
                 newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson; 
                 newRow.Cells["TicketManager"].Value = ticket.Manager; 
-            }§
+            }
         }
 
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)

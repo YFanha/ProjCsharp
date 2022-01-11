@@ -56,8 +56,8 @@ namespace Ticketing
 
                 DataGridViewRow newRow = dgvTickets.Rows[newRowIndex];
 
-                newRow.Cells["TicketNumber"].Value = ticket.Id; 
-                newRow.Cells["TicketTitle"].Value = ticket.Title; 
+                newRow.Cells["TicketNumber"].Value = ticket.Id.ToString(); 
+                newRow.Cells["TicketTitle"].Value = ticket.Title;
                 newRow.Cells["TicketDescription"].Value = ticket.Description; 
                 newRow.Cells["TicketCategory"].Value = ticket.Category; 
                 newRow.Cells["TicketState"].Value = ticket.State; 

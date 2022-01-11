@@ -27,11 +27,14 @@ namespace Création_tickets
         {
             ticketHour.Format = DateTimePickerFormat.Time;
 
-            
-            ticketType.Items.Add("Problème logiciel");
-            ticketType.Items.Add("Problème réseau");
-            ticketType.Items.Add("Problème système");
-            ticketType.Items.Add("Problème matériel");
+            List<Category> categories = Category.FindAll();
+
+            foreach(Category _category in categories)
+            {
+                ticketType.Items.Add(_category.Name);
+                if (_category.Name == "Inconnu") ticketType.SelectedItem = _category.Name;
+            }
+
 
         }
 

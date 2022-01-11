@@ -66,7 +66,7 @@ namespace Ticketing
                 newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate; 
                 newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson; 
                 newRow.Cells["TicketManager"].Value = ticket.Manager; 
-            }§
+            }
         }
 
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)

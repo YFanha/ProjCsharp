@@ -42,7 +42,7 @@ namespace Ticketing
             // 
             this.txtboxLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtboxLogin.Location = new System.Drawing.Point(283, 121);
+            this.txtboxLogin.Location = new System.Drawing.Point(284, 121);
             this.txtboxLogin.Name = "txtboxLogin";
             this.txtboxLogin.Size = new System.Drawing.Size(209, 29);
             this.txtboxLogin.TabIndex = 1;
@@ -51,7 +51,7 @@ namespace Ticketing
             // 
             this.txtboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtboxPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtboxPassword.Location = new System.Drawing.Point(283, 192);
+            this.txtboxPassword.Location = new System.Drawing.Point(284, 192);
             this.txtboxPassword.Name = "txtboxPassword";
             this.txtboxPassword.Size = new System.Drawing.Size(209, 29);
             this.txtboxPassword.TabIndex = 2;
@@ -61,7 +61,7 @@ namespace Ticketing
             // 
             this.btnConnexion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConnexion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnConnexion.Location = new System.Drawing.Point(283, 280);
+            this.btnConnexion.Location = new System.Drawing.Point(284, 280);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(209, 39);
             this.btnConnexion.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace Ticketing
             this.lblConnectionError.AutoSize = true;
             this.lblConnectionError.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConnectionError.ForeColor = System.Drawing.Color.Red;
-            this.lblConnectionError.Location = new System.Drawing.Point(283, 224);
+            this.lblConnectionError.Location = new System.Drawing.Point(284, 224);
             this.lblConnectionError.Name = "lblConnectionError";
             this.lblConnectionError.Size = new System.Drawing.Size(0, 15);
             this.lblConnectionError.TabIndex = 5;
@@ -117,7 +117,7 @@ namespace Ticketing
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 450);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblConnectionError);

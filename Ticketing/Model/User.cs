@@ -10,6 +10,7 @@ namespace Ticketing
 {
     public class User
     {
+        private int _id;
         private string _firstname;
         private string _lastname;
         private string _phoneNumber;
@@ -27,6 +28,7 @@ namespace Ticketing
             while (reader.Read())
             {
                 _email = email;
+                _id = reader.GetInt32("id");
                 _firstname = reader.GetString("firstname");
                 _lastname = reader.GetString("lastname");
                 _phoneNumber = reader.GetString("phoneNumber");
@@ -34,6 +36,11 @@ namespace Ticketing
             }
 
             reader.Close();
+        }
+
+        public int Id
+        {
+            get { return _id; }
         }
 
         public string Firstname

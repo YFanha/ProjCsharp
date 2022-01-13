@@ -17,6 +17,12 @@ namespace Ticketing
         private MySqlConnection _connection;
         public User UserConnected;
 
+        //Constante pour définir le type d'utilisateur /!\ DOIT CORRESPONDRE à LA BASE DE DONNÉE (Valeur de la table ´roles´) /!\
+        const int USER_ROLE_ID = 1;
+        const int TECH_ROLE_ID = 2;
+        const int ADMIN_ROLE_ID = 3;
+
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -51,11 +57,23 @@ namespace Ticketing
             {
                 UserConnected = User.SignIn(txtboxLogin.Text, txtboxPassword.Text);
 
-                //Ouvrir page des tickets
-                FrmViewTtickets frmViewTickets = new FrmViewTtickets();
                 Hide();
-                frmViewTickets.User = UserConnected;
-                frmViewTickets.ShowDialog();
+
+                if(UserConnected.RolesId == TECH_ROLE_ID || UserConnected.Id == ADMIN_ROLE_ID)
+                {
+
+                    //Ouvrir page des tickets
+                    FrmViewTtickets frmViewTickets = new FrmViewTtickets();
+                    frmViewTickets.User = UserConnected;
+                    frmViewTickets.ShowDialog();
+
+                }else if(UserConnected.RolesId == USER_ROLE_ID)
+                {
+                    frmTicket frmCreateTicket = new frmTicket();
+                    frmCreateTicket.User = UserConnected;
+                    frmCreateTicket.ShowDialog();
+                }
+                
                 txtboxLogin.Text = "";
                 txtboxPassword.Text = "";
                 Show();

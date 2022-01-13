@@ -18,6 +18,11 @@ namespace Ticketing
 
         public User User;
 
+        //Constante pour définir le type d'utilisateur /!\ DOIT CORRESPONDRE à LA BASE DE DONNÉE (Valeur de la table ´roles´) /!\
+        const int USER_ROLE_ID = 1;
+        const int TECH_ROLE_ID = 2;
+        const int ADMIN_ROLE_ID = 3;
+
         public frmTicket()
         {
             InitializeComponent();
@@ -84,12 +89,18 @@ namespace Ticketing
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            string problem = "Nom du ticket : " + ticketName + " | Type de problème : " + ticketType.SelectedItem + " | Heure de la panne : " + ticketHour.Text + " | Date de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + " | Description : " + ticketDesc.Text;
-            MessageBox.Show(problem);
+            string problem = "Votre ticket a bien été envoyé. \nNom du ticket : " + ticketName + "\nType de problème : " + ticketType.SelectedItem + "\nHeure de la panne : " + ticketHour.Text + "\nDate de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + "\nDescription : " + ticketDesc.Text;
+            
             try
             {
                 Ticket ticket = new Ticket(ticketName, ticketDesc.Text.ToString(), User.Id);
                 ticket.Save();
+
+                if(User.RolesId == USER_ROLE_ID)
+                {
+                    MessageBox.Show(problem);
+                }
+
                 this.Close();
             }
             catch (NoTechnicianAvailable ex)
@@ -97,8 +108,5 @@ namespace Ticketing
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-    }
     }
 }

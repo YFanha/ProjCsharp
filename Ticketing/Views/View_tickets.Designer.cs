@@ -43,6 +43,8 @@ namespace Ticketing
             this.lastModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastModifiedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbStateChoice = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,11 +167,32 @@ namespace Ticketing
             this.TicketManager.Name = "TicketManager";
             this.TicketManager.Width = 125;
             // 
+            // cmbStateChoice
+            // 
+            this.cmbStateChoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbStateChoice.FormattingEnabled = true;
+            this.cmbStateChoice.Location = new System.Drawing.Point(1026, 19);
+            this.cmbStateChoice.Name = "cmbStateChoice";
+            this.cmbStateChoice.Size = new System.Drawing.Size(147, 29);
+            this.cmbStateChoice.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(977, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "État :";
+            // 
             // FrmViewTtickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 541);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbStateChoice);
             this.Controls.Add(this.dgvTickets);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAdd);
@@ -179,6 +202,7 @@ namespace Ticketing
             this.Load += new System.EventHandler(this.FrmViewTtickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,6 +222,8 @@ namespace Ticketing
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
+        private System.Windows.Forms.ComboBox cmbStateChoice;
+        private System.Windows.Forms.Label label1;
     }
 }
 

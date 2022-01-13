@@ -80,9 +80,9 @@ namespace Création_tickets
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(34, 143);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(102, 15);
+            this.lblName.Size = new System.Drawing.Size(101, 15);
             this.lblName.TabIndex = 3;
-            this.lblName.Text = "Nom de l\'incident";
+            this.lblName.Text = "Titre du problème";
             // 
             // label5
             // 

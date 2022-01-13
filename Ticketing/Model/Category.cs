@@ -21,18 +21,18 @@ namespace Ticketing
 
         public static List<Category> FindAll()
         {
-            List<Category> _states = new List<Category>();
+            List<Category> categories = new List<Category>();
 
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM categories;", DatabaseInteractions.GetConnection()).ExecuteReader();
 
             while (reader.Read())
             {
                 Category aNewState = new Category(reader.GetInt32("id"), reader.GetString("name"));
-                _states.Add(aNewState);
+                categories.Add(aNewState);
             }
             reader.Close();
 
-            return _states;
+            return categories;
         }
 
         public int Id

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+using System.Windows.Forms;
+
 namespace Ticketing
 {
     public class Ticket
@@ -62,6 +64,7 @@ namespace Ticketing
         //Constructeur pour ticket déjà enregistré dans la base de données
         private Ticket(int id, string title, string description, int category_id, int state_id, int manager_id, DateTime opening, int openingPerson, DateTime closing, int closingPerson, DateTime lastModified, int lastModifiedPerson)
         {
+            _id = id;
             _title = title;
             _description = description;
             _categoryId = category_id;
@@ -75,9 +78,10 @@ namespace Ticketing
             _lastModifiedPersonId = lastModifiedPerson;
         }
 
-        public static List<Ticket> FindAll()
+        public static List<Ticket> FindAll(string parameter = "")
         {
-            MySqlDataReader reader = new MySqlCommand("SELECT * from tickets", DatabaseInteractions.GetConnection()).ExecuteReader();
+            MySqlDataReader reader = new MySqlCommand("SELECT * from tickets WHERE state_id LIKE \"%" + parameter + "%\"", DatabaseInteractions.GetConnection()).ExecuteReader();
+
             List<Ticket> ticketsList = new List<Ticket>();
             while (reader.Read())
             {
@@ -135,6 +139,7 @@ namespace Ticketing
             }
             lastmodified = reader.GetDateTime(LAST_MODIFIED_DATE);
             lastmodifiedPerson = reader.GetInt32(LAST_MODIFIED_PERSON);
+
 
             return new Ticket(id, title, description, category_id, state_id, manager_id, opening, openingPerson, closing, closingPerson, lastmodified, lastmodifiedPerson);
         }

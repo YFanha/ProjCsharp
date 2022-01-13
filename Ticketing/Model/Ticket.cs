@@ -54,7 +54,7 @@ namespace Ticketing
             _description = description;
             _categoryId = DEFAULT_CATEGORY;
             _statesId = DEFAULT_STATES;
-            _managerId = Technician.RandomTechnician(); //
+            _managerId = Technician.RandomTechnician(); 
             _openingDate = DateTime.Now;
             _openeningPersonId = openingPersonId;
             _lastModifiedDate = DateTime.Now;

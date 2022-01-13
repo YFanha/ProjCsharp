@@ -90,9 +90,8 @@ namespace Création_tickets
             string problem = "Nom du ticket : " + ticketName + " | Type de problème : " + ticketType.SelectedItem + " | Heure de la panne : " + ticketHour.Text + " | Date de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + " | Description : " + ticketDesc.Text;
             MessageBox.Show(problem);
             //INSERT INTO people () VALUES 
-            //Fonction Saves() dans ticket peut être util
-
-
+            //Fonction Saves() dans ticket peut être utile
+            
 
 
         }

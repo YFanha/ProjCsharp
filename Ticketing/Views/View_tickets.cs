@@ -30,9 +30,14 @@ namespace Ticketing
             List<State> states = State.FindAll();
             ComboBox cmbState = new ComboBox();
 
-            foreach(State state in states)
+            cmbStateChoice.Items.Add("Tous");
+
+            foreach (State state in states)
             {
                 cmbState.Items.Add(state.Name);
+
+                //Add states for choice of type of ticket
+                cmbStateChoice.Items.Add(state);
             }
             ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketState"]).DataSource = cmbState.Items;
 
@@ -40,7 +45,7 @@ namespace Ticketing
             List<Category> categories = Category.FindAll();
             ComboBox cmbCategory = new ComboBox();
 
-            foreach(Category category in categories)
+            foreach (Category category in categories)
             {
                 cmbCategory.Items.Add(category.Name);
             }
@@ -50,28 +55,7 @@ namespace Ticketing
             _tickets = new List<Ticket>();
             _tickets = Ticket.FindAll();
 
-            foreach(Ticket ticket in _tickets)
-            {
-                int newRowIndex = dgvTickets.Rows.Add();
-
-                DataGridViewRow newRow = dgvTickets.Rows[newRowIndex];
-
-                newRow.Cells["TicketNumber"].Value = ticket.Id.ToString(); 
-                newRow.Cells["TicketTitle"].Value = ticket.Title;
-                newRow.Cells["TicketDescription"].Value = ticket.Description; 
-                newRow.Cells["TicketCategory"].Value = ticket.Category; 
-                newRow.Cells["TicketState"].Value = ticket.State; 
-                newRow.Cells["openingDate"].Value = ticket.OpeningDate; 
-                newRow.Cells["openingPerson"].Value = ticket.OpeningPerson; 
-                newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate; 
-                newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson; 
-                newRow.Cells["TicketManager"].Value = ticket.Manager; 
-            }
-        }
-
-        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            PutTicketInDataGridView();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -79,18 +63,56 @@ namespace Ticketing
             frmTicket frmTicket = new frmTicket();
             frmTicket.User = this.User;
             frmTicket.ShowDialog();
-            
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
             this.Close();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void cmbStateChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            dgvTickets.Rows.Clear();
+            dgvTickets.Refresh();
+
+            if (cmbStateChoice.SelectedItem.ToString() != "Tous")
+            {
+                State state = (State)cmbStateChoice.SelectedItem;
+                _tickets = Ticket.FindAll(state.Id.ToString());
+            }
+            else
+            {
+                _tickets = Ticket.FindAll();
+            }
+            PutTicketInDataGridView();
+        }
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //Insert Tickets from the list of ticket (_ticket) in datagridview
+        private void PutTicketInDataGridView()
+        {
+            foreach (Ticket ticket in _tickets)
+            {
+                int newRowIndex = dgvTickets.Rows.Add();
+
+                DataGridViewRow newRow = dgvTickets.Rows[newRowIndex];
+
+                newRow.Cells["TicketNumber"].Value = ticket.Id.ToString();
+                newRow.Cells["TicketTitle"].Value = ticket.Title;
+                newRow.Cells["TicketDescription"].Value = ticket.Description;
+                newRow.Cells["TicketCategory"].Value = ticket.Category;
+                newRow.Cells["TicketState"].Value = ticket.State;
+                newRow.Cells["openingDate"].Value = ticket.OpeningDate;
+                newRow.Cells["openingPerson"].Value = ticket.OpeningPerson;
+                newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate;
+                newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson;
+                newRow.Cells["TicketManager"].Value = ticket.Manager;
+            }
         }
     }
 }

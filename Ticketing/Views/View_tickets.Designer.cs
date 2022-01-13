@@ -56,7 +56,6 @@ namespace Ticketing
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Supprimer un ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -80,6 +79,13 @@ namespace Ticketing
             // 
             // dgvTickets
             // 
+            this.dgvTickets.AllowUserToAddRows = false;
+            this.dgvTickets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTickets.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTickets.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TicketNumber,
@@ -92,11 +98,11 @@ namespace Ticketing
             this.lastModifiedDate,
             this.lastModifiedPerson,
             this.TicketManager});
-            this.dgvTickets.Location = new System.Drawing.Point(12, 140);
+            this.dgvTickets.Location = new System.Drawing.Point(-1, 140);
             this.dgvTickets.Name = "dgvTickets";
             this.dgvTickets.RowHeadersWidth = 51;
             this.dgvTickets.RowTemplate.Height = 25;
-            this.dgvTickets.Size = new System.Drawing.Size(1161, 150);
+            this.dgvTickets.Size = new System.Drawing.Size(1213, 704);
             this.dgvTickets.TabIndex = 3;
             this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
             // 
@@ -121,21 +127,18 @@ namespace Ticketing
             this.TicketDescription.HeaderText = "Description";
             this.TicketDescription.MinimumWidth = 6;
             this.TicketDescription.Name = "TicketDescription";
-            this.TicketDescription.Width = 125;
             // 
             // TicketCategory
             // 
             this.TicketCategory.HeaderText = "Catégorie";
             this.TicketCategory.MinimumWidth = 6;
             this.TicketCategory.Name = "TicketCategory";
-            this.TicketCategory.Width = 125;
             // 
             // TicketState
             // 
             this.TicketState.HeaderText = "État";
             this.TicketState.MinimumWidth = 6;
             this.TicketState.Name = "TicketState";
-            this.TicketState.Width = 125;
             // 
             // openingDate
             // 
@@ -146,38 +149,37 @@ namespace Ticketing
             // 
             this.openingPerson.HeaderText = "Ouvert par";
             this.openingPerson.Name = "openingPerson";
-            this.openingPerson.ReadOnly = true;
             // 
             // lastModifiedDate
             // 
             this.lastModifiedDate.HeaderText = "Dernière modification le";
             this.lastModifiedDate.Name = "lastModifiedDate";
-            this.lastModifiedDate.ReadOnly = true;
             // 
             // lastModifiedPerson
             // 
             this.lastModifiedPerson.HeaderText = "Modifié par :";
             this.lastModifiedPerson.Name = "lastModifiedPerson";
-            this.lastModifiedPerson.ReadOnly = true;
             // 
             // TicketManager
             // 
             this.TicketManager.HeaderText = "Responsable";
             this.TicketManager.MinimumWidth = 6;
             this.TicketManager.Name = "TicketManager";
-            this.TicketManager.Width = 125;
             // 
             // cmbStateChoice
             // 
+            this.cmbStateChoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStateChoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbStateChoice.FormattingEnabled = true;
             this.cmbStateChoice.Location = new System.Drawing.Point(1026, 19);
             this.cmbStateChoice.Name = "cmbStateChoice";
             this.cmbStateChoice.Size = new System.Drawing.Size(147, 29);
             this.cmbStateChoice.TabIndex = 4;
+            this.cmbStateChoice.SelectedIndexChanged += new System.EventHandler(this.cmbStateChoice_SelectedIndexChanged);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(977, 22);

@@ -30,7 +30,6 @@ namespace Ticketing
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
             _connection = DatabaseInteractions.GetConnection();
 
             try

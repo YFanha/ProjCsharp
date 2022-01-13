@@ -1,5 +1,5 @@
 ﻿
-namespace Création_tickets
+namespace Ticketing
 {
     partial class frmTicket
     {

@@ -45,6 +45,19 @@ namespace Ticketing
             this.btnSend = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.ticketHour = new System.Windows.Forms.DateTimePicker();
+            this.lblConfirmMessage = new System.Windows.Forms.Label();
+            this.lblProblemTitle = new System.Windows.Forms.Label();
+            this.lblProblemType = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.rtxtDescription = new System.Windows.Forms.RichTextBox();
+            this.lblTitleValue = new System.Windows.Forms.Label();
+            this.lblProblemTypeValue = new System.Windows.Forms.Label();
+            this.lblDateValue = new System.Windows.Forms.Label();
+            this.btnNewTicket = new System.Windows.Forms.Button();
+            this.btnCloseApp = new System.Windows.Forms.Button();
+            this.grpBoxConfirmMsg = new System.Windows.Forms.GroupBox();
+            this.grpBoxConfirmMsg.SuspendLayout();
             this.SuspendLayout();
             // 
             // txbName
@@ -196,11 +209,147 @@ namespace Ticketing
             this.ticketHour.TabIndex = 19;
             this.ticketHour.TabStop = false;
             // 
+            // lblConfirmMessage
+            // 
+            this.lblConfirmMessage.AutoSize = true;
+            this.lblConfirmMessage.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblConfirmMessage.Location = new System.Drawing.Point(32, 47);
+            this.lblConfirmMessage.Name = "lblConfirmMessage";
+            this.lblConfirmMessage.Size = new System.Drawing.Size(280, 25);
+            this.lblConfirmMessage.TabIndex = 0;
+            this.lblConfirmMessage.Text = "Votre ticket a bien été envoyé.";
+            // 
+            // lblProblemTitle
+            // 
+            this.lblProblemTitle.AutoSize = true;
+            this.lblProblemTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProblemTitle.Location = new System.Drawing.Point(32, 110);
+            this.lblProblemTitle.Name = "lblProblemTitle";
+            this.lblProblemTitle.Size = new System.Drawing.Size(54, 20);
+            this.lblProblemTitle.TabIndex = 1;
+            this.lblProblemTitle.Text = "Titre : ";
+            this.lblProblemTitle.Click += new System.EventHandler(this.lblProblemTitle_Click);
+            // 
+            // lblProblemType
+            // 
+            this.lblProblemType.AutoSize = true;
+            this.lblProblemType.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProblemType.Location = new System.Drawing.Point(32, 137);
+            this.lblProblemType.Name = "lblProblemType";
+            this.lblProblemType.Size = new System.Drawing.Size(142, 20);
+            this.lblProblemType.TabIndex = 2;
+            this.lblProblemType.Text = "Type de problème :";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDate.Location = new System.Drawing.Point(33, 162);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(134, 20);
+            this.lblDate.TabIndex = 3;
+            this.lblDate.Text = "Date de la panne :";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDescription.Location = new System.Drawing.Point(32, 211);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(89, 20);
+            this.lblDescription.TabIndex = 4;
+            this.lblDescription.Text = "Description";
+            // 
+            // rtxtDescription
+            // 
+            this.rtxtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtDescription.Location = new System.Drawing.Point(32, 250);
+            this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.Size = new System.Drawing.Size(446, 200);
+            this.rtxtDescription.TabIndex = 5;
+            this.rtxtDescription.Text = "";
+            // 
+            // lblTitleValue
+            // 
+            this.lblTitleValue.AutoSize = true;
+            this.lblTitleValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitleValue.Location = new System.Drawing.Point(85, 110);
+            this.lblTitleValue.Name = "lblTitleValue";
+            this.lblTitleValue.Size = new System.Drawing.Size(0, 20);
+            this.lblTitleValue.TabIndex = 6;
+            // 
+            // lblProblemTypeValue
+            // 
+            this.lblProblemTypeValue.AutoSize = true;
+            this.lblProblemTypeValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblProblemTypeValue.Location = new System.Drawing.Point(180, 137);
+            this.lblProblemTypeValue.Name = "lblProblemTypeValue";
+            this.lblProblemTypeValue.Size = new System.Drawing.Size(50, 20);
+            this.lblProblemTypeValue.TabIndex = 7;
+            this.lblProblemTypeValue.Text = "label7";
+            // 
+            // lblDateValue
+            // 
+            this.lblDateValue.AutoSize = true;
+            this.lblDateValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateValue.Location = new System.Drawing.Point(173, 162);
+            this.lblDateValue.Name = "lblDateValue";
+            this.lblDateValue.Size = new System.Drawing.Size(50, 20);
+            this.lblDateValue.TabIndex = 8;
+            this.lblDateValue.Text = "label7";
+            // 
+            // btnNewTicket
+            // 
+            this.btnNewTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNewTicket.Location = new System.Drawing.Point(31, 456);
+            this.btnNewTicket.Name = "btnNewTicket";
+            this.btnNewTicket.Size = new System.Drawing.Size(103, 28);
+            this.btnNewTicket.TabIndex = 22;
+            this.btnNewTicket.Text = "Nouveau ticket";
+            this.btnNewTicket.UseVisualStyleBackColor = true;
+            this.btnNewTicket.Click += new System.EventHandler(this.btnNewTicket_Click);
+            // 
+            // btnCloseApp
+            // 
+            this.btnCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseApp.Location = new System.Drawing.Point(375, 456);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Size = new System.Drawing.Size(103, 28);
+            this.btnCloseApp.TabIndex = 23;
+            this.btnCloseApp.Text = "Fermer";
+            this.btnCloseApp.UseVisualStyleBackColor = true;
+            // 
+            // grpBoxConfirmMsg
+            // 
+            this.grpBoxConfirmMsg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBoxConfirmMsg.Controls.Add(this.btnCloseApp);
+            this.grpBoxConfirmMsg.Controls.Add(this.btnNewTicket);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblDateValue);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblProblemTypeValue);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblTitleValue);
+            this.grpBoxConfirmMsg.Controls.Add(this.rtxtDescription);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblDescription);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblDate);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblProblemType);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblProblemTitle);
+            this.grpBoxConfirmMsg.Controls.Add(this.lblConfirmMessage);
+            this.grpBoxConfirmMsg.Location = new System.Drawing.Point(0, 1);
+            this.grpBoxConfirmMsg.Name = "grpBoxConfirmMsg";
+            this.grpBoxConfirmMsg.Size = new System.Drawing.Size(513, 490);
+            this.grpBoxConfirmMsg.TabIndex = 21;
+            this.grpBoxConfirmMsg.TabStop = false;
+            this.grpBoxConfirmMsg.Visible = false;
+            // 
             // frmTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 492);
+            this.Controls.Add(this.grpBoxConfirmMsg);
             this.Controls.Add(this.ticketHour);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSend);
@@ -220,6 +369,8 @@ namespace Ticketing
             this.Name = "frmTicket";
             this.Text = "Création de tickets";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.grpBoxConfirmMsg.ResumeLayout(false);
+            this.grpBoxConfirmMsg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +394,18 @@ namespace Ticketing
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker ticketHour;
+        private System.Windows.Forms.Label lblConfirmMessage;
+        private System.Windows.Forms.Label lblProblemTitle;
+        private System.Windows.Forms.Label lblProblemType;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.RichTextBox rtxtDescription;
+        private System.Windows.Forms.Label lblTitleValue;
+        private System.Windows.Forms.Label lblProblemTypeValue;
+        private System.Windows.Forms.Label lblDateValue;
+        private System.Windows.Forms.Button btnNewTicket;
+        private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.GroupBox grpBoxConfirmMsg;
     }
 }
 

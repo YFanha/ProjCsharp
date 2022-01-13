@@ -98,15 +98,37 @@ namespace Ticketing
 
                 if(User.RolesId == USER_ROLE_ID)
                 {
-                    MessageBox.Show(problem);
-                }
+                    lblTitleValue.Text = ticketName;
+                    lblProblemTypeValue.Text = ticketType.SelectedItem.ToString();
+                    lblDateValue.Text = ticketDate.SelectionStart.Day + "." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year;
+                    rtxtDescription.Text = ticketDesc.Text;
 
-                this.Close();
+                    grpBoxConfirmMsg.Visible = true;
+
+                } else
+                {
+                    this.Close();
+                }
             }
             catch (NoTechnicianAvailable ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void lblProblemTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNewTicket_Click(object sender, EventArgs e)
+        {
+            ticketHour.Format = DateTimePickerFormat.Time;
+            ticketType.SelectedItem = "Inconnu";
+            txbName.Text = "";
+            ticketDesc.Text = "";
+
+            grpBoxConfirmMsg.Visible = false;
         }
     }
 }

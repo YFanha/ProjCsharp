@@ -86,14 +86,16 @@ namespace Création_tickets
         {
             string problem = "Nom du ticket : " + ticketName + " | Type de problème : " + ticketType.SelectedItem + " | Heure de la panne : " + ticketHour.Text + " | Date de la panne " + ticketDate.SelectionStart.Day+"." + ticketDate.SelectionStart.Month + "." + ticketDate.SelectionStart.Year + " | Description : " + ticketDesc.Text;
             MessageBox.Show(problem);
-            //INSERT INTO people () VALUES 
-            //Fonction Saves() dans ticket à utiliser 
-
-
-
-            Ticket ticket = new Ticket(ticketName, ticketDesc.ToString(), User.Id);
-            ticket.Save();
-
+            try
+            {
+                Ticket ticket = new Ticket(ticketName, ticketDesc.ToString(), User.Id);
+                ticket.Save();
+                this.Close();
+            }
+            catch (NoTechnicianAvailable ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

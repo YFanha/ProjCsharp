@@ -50,11 +50,12 @@ namespace Ticketing
         public Ticket(string title, string description, int openingPersonId)
         {
             _connection = DatabaseInteractions.GetConnection();
+            _managerId = Technician.RandomTechnician();
+
             _title = title;
             _description = description;
             _categoryId = DEFAULT_CATEGORY;
             _statesId = DEFAULT_STATES;
-            _managerId = Technician.RandomTechnician(); 
             _openingDate = DateTime.Now;
             _openeningPersonId = openingPersonId;
             _lastModifiedDate = DateTime.Now;
@@ -149,19 +150,20 @@ namespace Ticketing
         {
             MySqlCommand InsertCommand = new MySqlCommand();
 
-            string stringQuery = "INSERT INTO tickets (@col_title, @col_description, @col_category_id, @col_state_id, @col_manager_id, @col_openingDate, @col_openingPerson_id, @col_lastModifiedDate, @col_lastmodifiedPerson_id) VALUES(@title, @description, @category, @state, @manager , @openingDate, @openingPerson, @lastModifiedDate, @lastModifiedPerson);";
+            string stringQuery = "INSERT INTO tickets (" + TITLE + ", " + DESCRIPTION + ", " + CATEGORY + ", " + STATE + ", " + MANAGER + ", " + OPENING_DATE + ", " + OPENING_PERSON + ", " + LAST_MODIFIED_DATE + ", " + LAST_MODIFIED_PERSON + ") VALUES (@title, @description, @category, @state, @manager , @openingDate, @openingPerson, @lastModifiedDate, @lastModifiedPerson);";
             InsertCommand.CommandText = stringQuery;
+            InsertCommand.Connection = _connection;
 
             //Remplacer variable par les valeurs
-            InsertCommand.Parameters.AddWithValue("@col_title", TITLE);
+            /*InsertCommand.Parameters.AddWithValue("@col_title", TITLE);
             InsertCommand.Parameters.AddWithValue("@col_description", DESCRIPTION);
-            InsertCommand.Parameters.AddWithValue("@col_category", CATEGORY);
-            InsertCommand.Parameters.AddWithValue("@col_state", STATE);
-            InsertCommand.Parameters.AddWithValue("@col_manager", MANAGER);
+            InsertCommand.Parameters.AddWithValue("@col_category_id", CATEGORY);
+            InsertCommand.Parameters.AddWithValue("@col_state_id", STATE);
+            InsertCommand.Parameters.AddWithValue("@col_manager_id", MANAGER);
             InsertCommand.Parameters.AddWithValue("@col_openingDate", OPENING_DATE);
-            InsertCommand.Parameters.AddWithValue("@col_openingPerson", OPENING_PERSON);
+            InsertCommand.Parameters.AddWithValue("@col_openingPerson_id", OPENING_PERSON);
             InsertCommand.Parameters.AddWithValue("@col_lastModifiedDate", LAST_MODIFIED_DATE);
-            InsertCommand.Parameters.AddWithValue("@col_lastModifiedPerson", LAST_MODIFIED_PERSON);
+            InsertCommand.Parameters.AddWithValue("@col_lastModifiedPerson_id", LAST_MODIFIED_PERSON);/**/
 
             InsertCommand.Parameters.AddWithValue("@title", _title);
             InsertCommand.Parameters.AddWithValue("@description", _description);

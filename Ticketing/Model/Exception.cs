@@ -12,4 +12,10 @@ namespace Ticketing
         {
         }
     }
+    public class NoTechnicianAvailable : Exception
+    {
+        public NoTechnicianAvailable() : base("Pas de technicien disponible.")
+        {
+        }
+    }
 }

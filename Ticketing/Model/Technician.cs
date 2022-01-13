@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
+using System.Windows.Forms;
+
 namespace Ticketing
 {
     public class Technician : User
@@ -22,7 +25,7 @@ namespace Ticketing
         {
             List<int> peopleId = new List<int>();
             
-            string sql = "SELECT id FROM people WHERE roles_id = " + TECH_ROLES_ID + ";";
+            string sql = "SELECT id FROM people WHERE role_id = " + TECH_ROLES_ID + ";";
             MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseInteractions.GetConnection());
             MySqlDataReader reader = sqlQuery.ExecuteReader();
 
@@ -31,6 +34,11 @@ namespace Ticketing
                 peopleId.Add(reader.GetInt32("id"));
             }
             reader.Close();
+
+            if(peopleId.Count <= 0)
+            {
+                throw new NoTechnicianAvailable();
+            }
 
             Random rnd = new Random();
             int index = rnd.Next(peopleId.Count);

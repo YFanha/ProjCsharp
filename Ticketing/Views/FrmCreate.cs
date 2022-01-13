@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Ticketing;
 
-namespace Création_tickets
+namespace Ticketing
 { 
     public partial class frmTicket : Form
     {
         private string ticketTypeProblem;
         private string ticketName;
+
         public User User;
 
         public frmTicket()
@@ -88,7 +88,7 @@ namespace Création_tickets
             MessageBox.Show(problem);
             try
             {
-                Ticket ticket = new Ticket(ticketName, ticketDesc.ToString(), User.Id);
+                Ticket ticket = new Ticket(ticketName, ticketDesc.Text.ToString(), User.Id);
                 ticket.Save();
                 this.Close();
             }
@@ -99,5 +99,6 @@ namespace Création_tickets
         }
 
 
+    }
     }
 }

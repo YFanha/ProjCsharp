@@ -278,8 +278,6 @@ namespace Ticketing
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
-        private System.Windows.Forms.ComboBox cmbStateChoice;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Label lblReload;
     }

@@ -123,5 +123,17 @@ namespace Ticketing
         {
 
         }
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            dgvTickets.Rows.Clear();
+            dgvTickets.Refresh();
+            _tickets = Ticket.FindAll();
+            PutTicketInDataGridView();
+        }
+        
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

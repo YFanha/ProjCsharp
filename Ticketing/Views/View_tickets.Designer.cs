@@ -29,6 +29,7 @@ namespace Ticketing
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmViewTtickets));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@ namespace Ticketing
             this.TicketManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbStateChoice = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.lblReload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +59,7 @@ namespace Ticketing
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Supprimer un ticket";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -188,11 +192,32 @@ namespace Ticketing
             this.label1.TabIndex = 5;
             this.label1.Text = "État :";
             // 
+            // btnReload
+            // 
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.Location = new System.Drawing.Point(63, 12);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(54, 54);
+            this.btnReload.TabIndex = 6;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // lblReload
+            // 
+            this.lblReload.AutoSize = true;
+            this.lblReload.Location = new System.Drawing.Point(63, 69);
+            this.lblReload.Name = "lblReload";
+            this.lblReload.Size = new System.Drawing.Size(59, 15);
+            this.lblReload.TabIndex = 7;
+            this.lblReload.Text = "Actualiser";
+            // 
             // FrmViewTtickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 541);
+            this.Controls.Add(this.lblReload);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbStateChoice);
             this.Controls.Add(this.dgvTickets);
@@ -226,6 +251,8 @@ namespace Ticketing
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
         private System.Windows.Forms.ComboBox cmbStateChoice;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Label lblReload;
     }
 }
 

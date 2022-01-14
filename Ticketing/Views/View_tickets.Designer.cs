@@ -33,6 +33,8 @@ namespace Ticketing
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.cmbStateChoice = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TicketNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,8 +45,6 @@ namespace Ticketing
             this.lastModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastModifiedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbStateChoice = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +105,30 @@ namespace Ticketing
             this.dgvTickets.Size = new System.Drawing.Size(1213, 704);
             this.dgvTickets.TabIndex = 3;
             this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
+            this.dgvTickets.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellValueChanged);
+            this.dgvTickets.SelectionChanged += new System.EventHandler(this.dgvTickets_SelectionChanged);
+            // 
+            // cmbStateChoice
+            // 
+            this.cmbStateChoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbStateChoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbStateChoice.FormattingEnabled = true;
+            this.cmbStateChoice.Location = new System.Drawing.Point(1026, 19);
+            this.cmbStateChoice.Name = "cmbStateChoice";
+            this.cmbStateChoice.Size = new System.Drawing.Size(147, 29);
+            this.cmbStateChoice.TabIndex = 4;
+            this.cmbStateChoice.SelectedIndexChanged += new System.EventHandler(this.cmbStateChoice_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(977, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "État :";
             // 
             // TicketNumber
             // 
@@ -130,6 +154,7 @@ namespace Ticketing
             // 
             // TicketCategory
             // 
+            this.TicketCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.TicketCategory.HeaderText = "Catégorie";
             this.TicketCategory.MinimumWidth = 6;
             this.TicketCategory.Name = "TicketCategory";
@@ -166,28 +191,6 @@ namespace Ticketing
             this.TicketManager.MinimumWidth = 6;
             this.TicketManager.Name = "TicketManager";
             // 
-            // cmbStateChoice
-            // 
-            this.cmbStateChoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbStateChoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbStateChoice.FormattingEnabled = true;
-            this.cmbStateChoice.Location = new System.Drawing.Point(1026, 19);
-            this.cmbStateChoice.Name = "cmbStateChoice";
-            this.cmbStateChoice.Size = new System.Drawing.Size(147, 29);
-            this.cmbStateChoice.TabIndex = 4;
-            this.cmbStateChoice.SelectedIndexChanged += new System.EventHandler(this.cmbStateChoice_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(977, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "État :";
-            // 
             // FrmViewTtickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,6 +217,8 @@ namespace Ticketing
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridView dgvTickets;
+        private System.Windows.Forms.ComboBox cmbStateChoice;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketDescription;
@@ -224,8 +229,6 @@ namespace Ticketing
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
-        private System.Windows.Forms.ComboBox cmbStateChoice;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -35,6 +35,20 @@ namespace Ticketing
             return categories;
         }
 
+        public static Category FindFromName(string name)
+        {
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM categories WHERE name LIKE \"" + name + "\";", DatabaseInteractions.GetConnection()).ExecuteReader();
+            Category category = null;
+
+            while (reader.Read())
+            {
+                category = new Category(reader.GetInt32("id"), reader.GetString("name"));
+            }
+            reader.Close();
+
+            return category;
+        }
+
         public int Id
         {
             get { return _id; }

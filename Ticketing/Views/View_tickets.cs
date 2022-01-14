@@ -113,5 +113,15 @@ namespace Ticketing
                 newRow.Cells["TicketManager"].Value = ticket.Manager;
             }
         }
+
+        private void dgvTickets_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvTickets_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

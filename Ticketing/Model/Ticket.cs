@@ -28,7 +28,7 @@ namespace Ticketing
         private MySqlConnection _connection;
 
         const int DEFAULT_STATES = 1;
-        const int DEFAULT_CATEGORY = 5;
+        const int DEFAULT_CATEGORY = 4;
 
         //Nom des colonnes
         const string ID = "id";
@@ -47,14 +47,14 @@ namespace Ticketing
 
 
         // Constructeur pour nouveau ticket
-        public Ticket(string title, string description, int openingPersonId)
+        public Ticket(string title, string description, int openingPersonId, int category = DEFAULT_CATEGORY)
         {
             _connection = DatabaseInteractions.GetConnection();
             _managerId = Technician.RandomTechnician();
 
             _title = title;
             _description = description;
-            _categoryId = DEFAULT_CATEGORY;
+            _categoryId = category;
             _statesId = DEFAULT_STATES;
             _openingDate = DateTime.Now;
             _openeningPersonId = openingPersonId;
@@ -154,17 +154,6 @@ namespace Ticketing
             InsertCommand.CommandText = stringQuery;
             InsertCommand.Connection = _connection;
 
-            //Remplacer variable par les valeurs
-            /*InsertCommand.Parameters.AddWithValue("@col_title", TITLE);
-            InsertCommand.Parameters.AddWithValue("@col_description", DESCRIPTION);
-            InsertCommand.Parameters.AddWithValue("@col_category_id", CATEGORY);
-            InsertCommand.Parameters.AddWithValue("@col_state_id", STATE);
-            InsertCommand.Parameters.AddWithValue("@col_manager_id", MANAGER);
-            InsertCommand.Parameters.AddWithValue("@col_openingDate", OPENING_DATE);
-            InsertCommand.Parameters.AddWithValue("@col_openingPerson_id", OPENING_PERSON);
-            InsertCommand.Parameters.AddWithValue("@col_lastModifiedDate", LAST_MODIFIED_DATE);
-            InsertCommand.Parameters.AddWithValue("@col_lastModifiedPerson_id", LAST_MODIFIED_PERSON);/**/
-
             InsertCommand.Parameters.AddWithValue("@title", _title);
             InsertCommand.Parameters.AddWithValue("@description", _description);
             InsertCommand.Parameters.AddWithValue("@category", _categoryId);
@@ -178,7 +167,22 @@ namespace Ticketing
             InsertCommand.ExecuteNonQuery();
         }
 
-        
+        public void Update()
+        {
+            string sqlQuery = "SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id WHERE id = @id;";
+            MySqlCommand updateCommand = new MySqlCommand(sqlQuery, _connection);
+
+            updateCommand.Parameters.AddWithValue("@title", _title);
+            updateCommand.Parameters.AddWithValue("@description", _description);
+            updateCommand.Parameters.AddWithValue("@category_id", _categoryId);
+            updateCommand.Parameters.AddWithValue("@state_id", _statesId);
+            updateCommand.Parameters.AddWithValue("@lastModifiedDate", _lastModifiedDate);
+            updateCommand.Parameters.AddWithValue("@lastModifiedPerson_id", _lastModifiedPersonId);
+
+            updateCommand.Parameters.AddWithValue("@id", _id);
+
+            updateCommand.ExecuteNonQuery();
+        }
 
         //Getter/Setter des variables
         public int Id
@@ -194,11 +198,13 @@ namespace Ticketing
         public string Description
         {
             get { return _description; }
+            set { _description = value; }
         }
 
         public int CategoryId
         {
             get { return _categoryId; }
+            set { _categoryId = value; }
         }
         public string Category
         {
@@ -208,6 +214,7 @@ namespace Ticketing
         public int StatesId
         {
             get { return _statesId; }
+            set { _statesId = value; }
         }
 
         public string State
@@ -218,6 +225,7 @@ namespace Ticketing
         public int ManagerId
         {
             get { return _managerId; }
+            set { _managerId = value; }
         }
         public string Manager
         {
@@ -241,11 +249,13 @@ namespace Ticketing
         public DateTime ClosingDate
         {
             get { return _closingDate; }
+            set { _closingDate = value; }
         }
 
         public int ClosingPersonId
         {
             get { return _closingPersonId; }
+            set { _closingPersonId = value; }
         }
 
         public string ClosingPerson
@@ -256,11 +266,13 @@ namespace Ticketing
         public DateTime LastModifiedDate
         {
             get { return _lastModifiedDate; }
+            set { _lastModifiedDate = value; }
         }
 
         public int LastModifiedPersonId
         {
             get { return _lastModifiedPersonId; }
+            set { _lastModifiedPersonId = value; }
         }
 
         public string LastModifiedPerson

@@ -13,7 +13,6 @@ namespace Ticketing
 { 
     public partial class frmTicket : Form
     {
-        private string ticketTypeProblem;
         private string ticketName;
 
         public User User;
@@ -93,7 +92,9 @@ namespace Ticketing
             
             try
             {
-                Ticket ticket = new Ticket(ticketName, ticketDesc.Text.ToString(), User.Id);
+                Category category = Category.FindFromName(ticketType.Text);
+
+                Ticket ticket = new Ticket(ticketName, ticketDesc.Text.ToString(), User.Id, category.Id);
                 ticket.Save();
 
                 if(User.RolesId == USER_ROLE_ID)

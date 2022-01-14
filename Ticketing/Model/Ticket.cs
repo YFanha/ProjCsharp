@@ -97,7 +97,7 @@ namespace Ticketing
         //Trouver les données d'un ticket grace à son id
         public static Ticket Find(int id)
         {
-            MySqlDataReader reader = new MySqlCommand("SELECT * FROM ticket WHERE id = " + id + ";", DatabaseInteractions.GetConnection()).ExecuteReader();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM tickets WHERE id = " + id + ";", DatabaseInteractions.GetConnection()).ExecuteReader();
 
             Ticket ticket = null;
 
@@ -169,7 +169,7 @@ namespace Ticketing
 
         public void Update()
         {
-            string sqlQuery = "SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id WHERE id = @id;";
+            string sqlQuery = "Update tickets SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id WHERE id = @id;";
             MySqlCommand updateCommand = new MySqlCommand(sqlQuery, _connection);
 
             updateCommand.Parameters.AddWithValue("@title", _title);
@@ -185,6 +185,9 @@ namespace Ticketing
         }
 
         //Getter/Setter des variables
+        /**
+         * Variable modifiable : Description, CategoryId, StatesId, ManagerId, LastModifiedDate,LastModifiedPersonId / ClosingDate, ClosingPersonId => que sous condition
+         * */
         public int Id
         {
             get { return _id; }

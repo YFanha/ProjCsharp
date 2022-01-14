@@ -35,6 +35,20 @@ namespace Ticketing
             return _states;
         }
 
+        public static State FindFromName(string name)
+        {
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM states WHERE name LIKE \"" + name + "\";", DatabaseInteractions.GetConnection()).ExecuteReader();
+            State state = null;
+
+            while (reader.Read())
+            {
+                state = new State(reader.GetInt32("id"), reader.GetString("name"));
+            }
+            reader.Close();
+
+            return state;
+        }
+
         public int Id
         {
             get { return _id; }

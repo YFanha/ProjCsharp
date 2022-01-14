@@ -16,7 +16,9 @@ namespace Ticketing
     {
         public User User;
         private List<Ticket> _tickets;
-        private int _ticketSelected_id;
+        private int _ticketSelected_id; //Id du ticket séléctionner, sert pour la modification.
+        private bool _dgvDataLoaded; //Valeur savoir quand les données de la base de données sont inscrites dans la DataGridView.
+
 
         public FrmViewTtickets()
         {
@@ -50,11 +52,9 @@ namespace Ticketing
             }
             ((DataGridViewComboBoxColumn)dgvTickets.Columns["TicketCategory"]).DataSource = cmbCategory.Items;
 
-            //Get tickets
-            _tickets = new List<Ticket>();
-            _tickets = Ticket.FindAll();
 
-            PutTicketInDataGridView();
+            _tickets = new List<Ticket>();
+            cmbStateChoice.SelectedItem = "Tous"; //Cela va remplir la dgv grace à l'evenement <cmbStateChoice_SelectedIndexChanged>
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,6 +72,8 @@ namespace Ticketing
 
         private void cmbStateChoice_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _dgvDataLoaded = false;
+
             dgvTickets.Rows.Clear();
             dgvTickets.Refresh();
 
@@ -95,6 +97,7 @@ namespace Ticketing
         //Insert Tickets from the list of ticket (_ticket) in datagridview
         private void PutTicketInDataGridView()
         {
+            _dgvDataLoaded = false;
             foreach (Ticket ticket in _tickets)
             {
                 int newRowIndex = dgvTickets.Rows.Add();
@@ -112,18 +115,34 @@ namespace Ticketing
                 newRow.Cells["LastModifiedPerson"].Value = ticket.LastModifiedPerson;
                 newRow.Cells["TicketManager"].Value = ticket.Manager;
             }
+            _dgvDataLoaded = true;
         }
 
         private void dgvTickets_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (_dgvDataLoaded)
+            {
+                Ticket ticketToUpdate = Ticket.Find(_ticketSelected_id);
+
+                ticketToUpdate.Description = dgvTickets.CurrentRow.Cells["TicketDescription"].Value.ToString();
+                ticketToUpdate.LastModifiedDate = DateTime.Parse(dgvTickets.CurrentRow.Cells["lastModifiedDate"].Value.ToString());
+                ticketToUpdate.CategoryId = Category.FindFromName(dgvTickets.CurrentRow.Cells["TicketCategory"].Value.ToString()).Id;
+                ticketToUpdate.StatesId = State.FindFromName(dgvTickets.CurrentRow.Cells["TicketState"].Value.ToString()).Id;
+                ticketToUpdate.LastModifiedPersonId = User.Id;
+
+                ticketToUpdate.Update();
+            }
         }
 
         private void dgvTickets_SelectionChanged(object sender, EventArgs e)
         {
-            string ticketSelected_id = dgvTickets.SelectedRows[0].ToString();
+            if (dgvTickets.CurrentRow.Cells[0].Value != null)
+            {
+                //string ticketSelected_id = dgvTickets.SelectedRows;
 
-            MessageBox.Show(ticketSelected_id);
+                _ticketSelected_id =  int.Parse(dgvTickets.CurrentRow.Cells[0].Value.ToString());
+            }
+
         }
         private void btnReload_Click(object sender, EventArgs e)
         {

@@ -88,6 +88,16 @@ namespace Ticketing
             return new User(email);
         }
 
+        public static int GetId(string fullname)
+        {
+            throw new NotImplementedException();
+            //Regex pour séparer les deux noms
+
+            //Reader
+
+            //Retourner Id
+        }
+
         public static string GetFullName(int id)
         {
             string fullName = "";

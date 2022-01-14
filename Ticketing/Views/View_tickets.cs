@@ -15,8 +15,8 @@ namespace Ticketing
     public partial class FrmViewTtickets : Form
     {
         public User User;
-
         private List<Ticket> _tickets;
+        private int _ticketSelected_id;
 
         public FrmViewTtickets()
         {
@@ -121,7 +121,9 @@ namespace Ticketing
 
         private void dgvTickets_SelectionChanged(object sender, EventArgs e)
         {
+            string ticketSelected_id = dgvTickets.SelectedRows[0].ToString();
 
+            MessageBox.Show(ticketSelected_id);
         }
         private void btnReload_Click(object sender, EventArgs e)
         {

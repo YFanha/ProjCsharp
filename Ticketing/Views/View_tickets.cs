@@ -94,7 +94,7 @@ namespace Ticketing
 
         }
 
-        //Insert Tickets from the list of ticket (_ticket) in datagridview
+        //Insert Tickets from the list of ticket (_tickets) in datagridview
         private void PutTicketInDataGridView()
         {
             _dgvDataLoaded = false;
@@ -124,12 +124,14 @@ namespace Ticketing
             {
                 Ticket ticketToUpdate = Ticket.Find(_ticketSelected_id);
 
+                //Update ticket's datas
                 ticketToUpdate.Description = dgvTickets.CurrentRow.Cells["TicketDescription"].Value.ToString();
                 ticketToUpdate.LastModifiedDate = DateTime.Parse(dgvTickets.CurrentRow.Cells["lastModifiedDate"].Value.ToString());
                 ticketToUpdate.CategoryId = Category.FindFromName(dgvTickets.CurrentRow.Cells["TicketCategory"].Value.ToString()).Id;
                 ticketToUpdate.StatesId = State.FindFromName(dgvTickets.CurrentRow.Cells["TicketState"].Value.ToString()).Id;
                 ticketToUpdate.LastModifiedPersonId = User.Id;
 
+                //Execute the Update query
                 ticketToUpdate.Update();
             }
         }
@@ -138,8 +140,6 @@ namespace Ticketing
         {
             if (dgvTickets.CurrentRow.Cells[0].Value != null)
             {
-                //string ticketSelected_id = dgvTickets.SelectedRows;
-
                 _ticketSelected_id =  int.Parse(dgvTickets.CurrentRow.Cells[0].Value.ToString());
             }
 

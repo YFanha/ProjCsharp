@@ -25,8 +25,6 @@ namespace Ticketing
         private DateTime _lastModifiedDate;
         private int _lastModifiedPersonId;
 
-        private MySqlConnection _connection;
-
         const int DEFAULT_STATES = 1;
         const int DEFAULT_CATEGORY = 4;
 
@@ -49,7 +47,6 @@ namespace Ticketing
         // Constructeur pour nouveau ticket
         public Ticket(string title, string description, int openingPersonId, int category = DEFAULT_CATEGORY)
         {
-            _connection = DatabaseInteractions.GetConnection();
             _managerId = Technician.RandomTechnician();
 
             _title = title;
@@ -152,7 +149,7 @@ namespace Ticketing
 
             string stringQuery = "INSERT INTO tickets (" + TITLE + ", " + DESCRIPTION + ", " + CATEGORY + ", " + STATE + ", " + MANAGER + ", " + OPENING_DATE + ", " + OPENING_PERSON + ", " + LAST_MODIFIED_DATE + ", " + LAST_MODIFIED_PERSON + ") VALUES (@title, @description, @category, @state, @manager , @openingDate, @openingPerson, @lastModifiedDate, @lastModifiedPerson);";
             InsertCommand.CommandText = stringQuery;
-            InsertCommand.Connection = _connection;
+            InsertCommand.Connection = DatabaseInteractions.GetConnection();
 
             InsertCommand.Parameters.AddWithValue("@title", _title);
             InsertCommand.Parameters.AddWithValue("@description", _description);
@@ -169,8 +166,12 @@ namespace Ticketing
 
         public void Update()
         {
+            MySqlCommand updateCommand = new MySqlCommand();
+
             string sqlQuery = "Update tickets SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id WHERE id = @id;";
-            MySqlCommand updateCommand = new MySqlCommand(sqlQuery, _connection);
+            
+            updateCommand.CommandText = sqlQuery;
+            updateCommand.Connection = DatabaseInteractions.GetConnection();
 
             updateCommand.Parameters.AddWithValue("@title", _title);
             updateCommand.Parameters.AddWithValue("@description", _description);

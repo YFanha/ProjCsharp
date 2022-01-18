@@ -1,5 +1,5 @@
 ﻿
-namespace Ticketing.Views
+namespace Ticketing
 {
     partial class FrmDetailTicket
     {
@@ -40,6 +40,7 @@ namespace Ticketing.Views
             this.rtxtDescription = new System.Windows.Forms.RichTextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.btnRemoveTicket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblConfirmMessage
@@ -155,11 +156,22 @@ namespace Ticketing.Views
             this.btnCloseApp.UseVisualStyleBackColor = true;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
+            // btnRemoveTicket
+            // 
+            this.btnRemoveTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRemoveTicket.Location = new System.Drawing.Point(9, 420);
+            this.btnRemoveTicket.Name = "btnRemoveTicket";
+            this.btnRemoveTicket.Size = new System.Drawing.Size(103, 28);
+            this.btnRemoveTicket.TabIndex = 25;
+            this.btnRemoveTicket.Text = "Supprimer ticket";
+            this.btnRemoveTicket.UseVisualStyleBackColor = true;
+            // 
             // FrmDetailTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 450);
+            this.Controls.Add(this.btnRemoveTicket);
             this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.rtxtDescription);
             this.Controls.Add(this.lblDescription);
@@ -192,5 +204,6 @@ namespace Ticketing.Views
         private System.Windows.Forms.RichTextBox rtxtDescription;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.Button btnRemoveTicket;
     }
 }

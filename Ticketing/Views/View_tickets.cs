@@ -155,8 +155,9 @@ namespace Ticketing
 
         private void dgvTickets_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            FrmDetailTicket frmDetailTicket = new FrmDetailTicket();
+            frmDetailTicket.Show();
             
-
 
         }
     }

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
-namespace Ticketing.Views
+namespace Ticketing
 {
     public partial class FrmDetailTicket : Form
     {
@@ -24,7 +25,7 @@ namespace Ticketing.Views
 
         private void FrmDetailTicket_Load(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("wlh ça marche frr");
         }
     }
 }

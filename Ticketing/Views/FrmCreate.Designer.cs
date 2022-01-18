@@ -321,6 +321,7 @@ namespace Ticketing
             this.btnCloseApp.TabIndex = 23;
             this.btnCloseApp.Text = "Fermer";
             this.btnCloseApp.UseVisualStyleBackColor = true;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // grpBoxConfirmMsg
             // 

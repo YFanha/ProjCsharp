@@ -25,7 +25,7 @@ namespace Ticketing
 
         private void FrmDetailTicket_Load(object sender, EventArgs e)
         {
-            lblTicketId.Text = "12312312";
+            lblTicketId.Text = "yo les reufs";
         }
     }
 }

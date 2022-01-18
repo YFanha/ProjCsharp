@@ -16,14 +16,11 @@ namespace Ticketing
         private string _phoneNumber;
         private string _email;
         private int _rolesId;
-        protected MySqlConnection _connection;
 
         public User(string email)
         {
-            _connection = DatabaseInteractions.GetConnection();
-
             //Récuperer données utilisateurs depuis l'email
-            MySqlDataReader reader = new MySqlCommand("SELECT * FROM people WHERE email =\'" + email + "\'", _connection).ExecuteReader();
+            MySqlDataReader reader = new MySqlCommand("SELECT * FROM people WHERE email =\'" + email + "\'", DatabaseInteractions.GetConnection()).ExecuteReader();
 
             while (reader.Read())
             {

@@ -39,7 +39,7 @@ namespace Ticketing
 
         public static string ReadFirstString(string sql)
         {
-            MySqlCommand sqlQuery = new MySqlCommand(sql, _connection);
+            MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseInteractions.GetConnection());
             return sqlQuery.ExecuteScalar()?.ToString();
         }
 

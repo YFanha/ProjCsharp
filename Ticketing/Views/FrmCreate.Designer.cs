@@ -266,7 +266,7 @@ namespace Ticketing
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtDescription.Location = new System.Drawing.Point(32, 250);
             this.rtxtDescription.Name = "rtxtDescription";
-            this.rtxtDescription.Size = new System.Drawing.Size(446, 0);
+            this.rtxtDescription.Size = new System.Drawing.Size(446, 205);
             this.rtxtDescription.TabIndex = 5;
             this.rtxtDescription.Text = "";
             // 
@@ -303,7 +303,7 @@ namespace Ticketing
             // btnNewTicket
             // 
             this.btnNewTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNewTicket.Location = new System.Drawing.Point(31, 253);
+            this.btnNewTicket.Location = new System.Drawing.Point(31, 458);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(103, 28);
             this.btnNewTicket.TabIndex = 22;
@@ -314,7 +314,7 @@ namespace Ticketing
             // btnCloseApp
             // 
             this.btnCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseApp.Location = new System.Drawing.Point(375, 253);
+            this.btnCloseApp.Location = new System.Drawing.Point(375, 458);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(103, 28);
             this.btnCloseApp.TabIndex = 23;
@@ -340,7 +340,7 @@ namespace Ticketing
             this.grpBoxConfirmMsg.Controls.Add(this.lblConfirmMessage);
             this.grpBoxConfirmMsg.Location = new System.Drawing.Point(2, 0);
             this.grpBoxConfirmMsg.Name = "grpBoxConfirmMsg";
-            this.grpBoxConfirmMsg.Size = new System.Drawing.Size(513, 287);
+            this.grpBoxConfirmMsg.Size = new System.Drawing.Size(513, 492);
             this.grpBoxConfirmMsg.TabIndex = 21;
             this.grpBoxConfirmMsg.TabStop = false;
             this.grpBoxConfirmMsg.Visible = false;

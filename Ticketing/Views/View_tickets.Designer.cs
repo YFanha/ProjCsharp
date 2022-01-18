@@ -34,6 +34,10 @@ namespace Ticketing
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.cmbStateChoice = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.lblReload = new System.Windows.Forms.Label();
             this.TicketNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +48,6 @@ namespace Ticketing
             this.lastModifiedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastModifiedPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TicketManager = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbStateChoice = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnReload = new System.Windows.Forms.Button();
-            this.lblReload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,67 +112,6 @@ namespace Ticketing
             this.dgvTickets.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellValueChanged);
             this.dgvTickets.SelectionChanged += new System.EventHandler(this.dgvTickets_SelectionChanged);
             // 
-            // TicketNumber
-            // 
-            this.TicketNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TicketNumber.HeaderText = "Numéro du ticket";
-            this.TicketNumber.MinimumWidth = 6;
-            this.TicketNumber.Name = "TicketNumber";
-            this.TicketNumber.Width = 88;
-            // 
-            // TicketTitle
-            // 
-            this.TicketTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.TicketTitle.HeaderText = "Titre du ticket";
-            this.TicketTitle.MinimumWidth = 6;
-            this.TicketTitle.Name = "TicketTitle";
-            this.TicketTitle.Width = 96;
-            // 
-            // TicketDescription
-            // 
-            this.TicketDescription.HeaderText = "Description";
-            this.TicketDescription.MinimumWidth = 6;
-            this.TicketDescription.Name = "TicketDescription";
-            // 
-            // TicketCategory
-            // 
-            this.TicketCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TicketCategory.HeaderText = "Catégorie";
-            this.TicketCategory.MinimumWidth = 6;
-            this.TicketCategory.Name = "TicketCategory";
-            // 
-            // TicketState
-            // 
-            this.TicketState.HeaderText = "État";
-            this.TicketState.MinimumWidth = 6;
-            this.TicketState.Name = "TicketState";
-            // 
-            // openingDate
-            // 
-            this.openingDate.HeaderText = "Date d\'ouverture";
-            this.openingDate.Name = "openingDate";
-            // 
-            // openingPerson
-            // 
-            this.openingPerson.HeaderText = "Ouvert par";
-            this.openingPerson.Name = "openingPerson";
-            // 
-            // lastModifiedDate
-            // 
-            this.lastModifiedDate.HeaderText = "Dernière modification le";
-            this.lastModifiedDate.Name = "lastModifiedDate";
-            // 
-            // lastModifiedPerson
-            // 
-            this.lastModifiedPerson.HeaderText = "Modifié par :";
-            this.lastModifiedPerson.Name = "lastModifiedPerson";
-            // 
-            // TicketManager
-            // 
-            this.TicketManager.HeaderText = "Responsable";
-            this.TicketManager.MinimumWidth = 6;
-            this.TicketManager.Name = "TicketManager";
-            // 
             // cmbStateChoice
             // 
             this.cmbStateChoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -214,6 +153,74 @@ namespace Ticketing
             this.lblReload.TabIndex = 7;
             this.lblReload.Text = "Actualiser";
             // 
+            // TicketNumber
+            // 
+            this.TicketNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TicketNumber.HeaderText = "Numéro du ticket";
+            this.TicketNumber.MinimumWidth = 6;
+            this.TicketNumber.Name = "TicketNumber";
+            this.TicketNumber.ReadOnly = true;
+            this.TicketNumber.Width = 88;
+            // 
+            // TicketTitle
+            // 
+            this.TicketTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TicketTitle.HeaderText = "Titre du ticket";
+            this.TicketTitle.MinimumWidth = 6;
+            this.TicketTitle.Name = "TicketTitle";
+            this.TicketTitle.ReadOnly = true;
+            this.TicketTitle.Width = 96;
+            // 
+            // TicketDescription
+            // 
+            this.TicketDescription.HeaderText = "Description";
+            this.TicketDescription.MinimumWidth = 6;
+            this.TicketDescription.Name = "TicketDescription";
+            // 
+            // TicketCategory
+            // 
+            this.TicketCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.TicketCategory.HeaderText = "Catégorie";
+            this.TicketCategory.MinimumWidth = 6;
+            this.TicketCategory.Name = "TicketCategory";
+            // 
+            // TicketState
+            // 
+            this.TicketState.HeaderText = "État";
+            this.TicketState.MinimumWidth = 6;
+            this.TicketState.Name = "TicketState";
+            // 
+            // openingDate
+            // 
+            this.openingDate.HeaderText = "Date d\'ouverture";
+            this.openingDate.Name = "openingDate";
+            this.openingDate.ReadOnly = true;
+            // 
+            // openingPerson
+            // 
+            this.openingPerson.HeaderText = "Ouvert par";
+            this.openingPerson.Name = "openingPerson";
+            this.openingPerson.ReadOnly = true;
+            // 
+            // lastModifiedDate
+            // 
+            this.lastModifiedDate.HeaderText = "Dernière modification le";
+            this.lastModifiedDate.Name = "lastModifiedDate";
+            this.lastModifiedDate.ReadOnly = true;
+            // 
+            // lastModifiedPerson
+            // 
+            this.lastModifiedPerson.HeaderText = "Modifié par :";
+            this.lastModifiedPerson.Name = "lastModifiedPerson";
+            this.lastModifiedPerson.ReadOnly = true;
+            // 
+            // TicketManager
+            // 
+            this.TicketManager.HeaderText = "Responsable";
+            this.TicketManager.MinimumWidth = 6;
+            this.TicketManager.Name = "TicketManager";
+            this.TicketManager.ReadOnly = true;
+            // 
             // FrmViewTtickets
             // 
             this.AcceptButton = this.btnReload;
@@ -245,6 +252,8 @@ namespace Ticketing
         private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.ComboBox cmbStateChoice;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.Label lblReload;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketDescription;
@@ -255,8 +264,6 @@ namespace Ticketing
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastModifiedPerson;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketManager;
-        private System.Windows.Forms.Button btnReload;
-        private System.Windows.Forms.Label lblReload;
     }
 }
 

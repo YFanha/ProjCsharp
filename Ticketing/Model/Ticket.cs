@@ -185,6 +185,15 @@ namespace Ticketing
             updateCommand.ExecuteNonQuery();
         }
 
+        public void Delete()
+        {
+            string sqlQuery = "DELETE FROM tickets WHERE id = @id";
+            MySqlCommand deleteCommand = new MySqlCommand(sqlQuery, DatabaseInteractions.GetConnection());
+
+            deleteCommand.Parameters.AddWithValue("@id", _id);
+            deleteCommand.ExecuteNonQuery();
+        }
+
         //Getter/Setter des variables
         /**
          * Variable modifiable : Description, CategoryId, StatesId, ManagerId, LastModifiedDate,LastModifiedPersonId / ClosingDate, ClosingPersonId => que sous condition

@@ -223,7 +223,7 @@ namespace Ticketing
             // 
             this.lblProblemTitle.AutoSize = true;
             this.lblProblemTitle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblProblemTitle.Location = new System.Drawing.Point(32, 110);
+            this.lblProblemTitle.Location = new System.Drawing.Point(34, 110);
             this.lblProblemTitle.Name = "lblProblemTitle";
             this.lblProblemTitle.Size = new System.Drawing.Size(54, 20);
             this.lblProblemTitle.TabIndex = 1;
@@ -275,10 +275,11 @@ namespace Ticketing
             // 
             this.lblTitleValue.AutoSize = true;
             this.lblTitleValue.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitleValue.Location = new System.Drawing.Point(85, 110);
+            this.lblTitleValue.Location = new System.Drawing.Point(101, 110);
             this.lblTitleValue.Name = "lblTitleValue";
-            this.lblTitleValue.Size = new System.Drawing.Size(0, 20);
+            this.lblTitleValue.Size = new System.Drawing.Size(35, 20);
             this.lblTitleValue.TabIndex = 6;
+            this.lblTitleValue.Text = "title";
             // 
             // lblProblemTypeValue
             // 
@@ -337,7 +338,7 @@ namespace Ticketing
             this.grpBoxConfirmMsg.Controls.Add(this.lblProblemType);
             this.grpBoxConfirmMsg.Controls.Add(this.lblProblemTitle);
             this.grpBoxConfirmMsg.Controls.Add(this.lblConfirmMessage);
-            this.grpBoxConfirmMsg.Location = new System.Drawing.Point(0, 1);
+            this.grpBoxConfirmMsg.Location = new System.Drawing.Point(2, 0);
             this.grpBoxConfirmMsg.Name = "grpBoxConfirmMsg";
             this.grpBoxConfirmMsg.Size = new System.Drawing.Size(513, 490);
             this.grpBoxConfirmMsg.TabIndex = 21;

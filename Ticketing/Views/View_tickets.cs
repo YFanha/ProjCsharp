@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace Ticketing
 {
     public partial class FrmViewTtickets : Form
@@ -89,11 +90,6 @@ namespace Ticketing
             PutTicketInDataGridView();
         }
 
-        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         //Insert Tickets from the list of ticket (_tickets) in datagridview
         private void PutTicketInDataGridView()
         {
@@ -155,6 +151,13 @@ namespace Ticketing
         private void btnDelete_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dgvTickets_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+
+
         }
     }
 }

@@ -126,7 +126,7 @@ namespace Ticketing
 
                 //Update ticket's datas
                 ticketToUpdate.Description = dgvTickets.CurrentRow.Cells["TicketDescription"].Value.ToString();
-                ticketToUpdate.LastModifiedDate = DateTime.Parse(dgvTickets.CurrentRow.Cells["lastModifiedDate"].Value.ToString());
+                ticketToUpdate.LastModifiedDate = DateTime.Now;
                 ticketToUpdate.CategoryId = Category.FindFromName(dgvTickets.CurrentRow.Cells["TicketCategory"].Value.ToString()).Id;
                 ticketToUpdate.StatesId = State.FindFromName(dgvTickets.CurrentRow.Cells["TicketState"].Value.ToString()).Id;
                 ticketToUpdate.LastModifiedPersonId = User.Id;

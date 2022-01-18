@@ -25,7 +25,7 @@ namespace Ticketing
 
         private void FrmDetailTicket_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("wlh ça marche frr");
+            lblTicketId.Text = "12312312";
         }
     }
 }

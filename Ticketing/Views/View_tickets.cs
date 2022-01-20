@@ -150,13 +150,16 @@ namespace Ticketing
         
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            Ticket ticketToDelete = Ticket.Find(_ticketSelected_id);
+            ticketToDelete.Delete();
         }
 
         private void dgvTickets_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             FrmDetailTicket frmDetailTicket = new FrmDetailTicket();
+            frmDetailTicket.Ticket = Ticket.Find(_ticketSelected_id);
             frmDetailTicket.Show();
+            
             
 
         }

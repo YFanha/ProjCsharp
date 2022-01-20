@@ -43,6 +43,13 @@ namespace Ticketing
             return sqlQuery.ExecuteScalar()?.ToString();
         }
 
+        public static void CloseConnection()
+        {
+            if(_connection.State == System.Data.ConnectionState.Closed)
+            {
+                _connection.Open();
+            }
+        }
         
 
     }

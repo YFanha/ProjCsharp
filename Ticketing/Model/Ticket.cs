@@ -168,7 +168,7 @@ namespace Ticketing
         {
             MySqlCommand updateCommand = new MySqlCommand();
 
-            string sqlQuery = "Update tickets SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id WHERE id = @id;";
+            string sqlQuery = "Update tickets SET title = @title, description = @description, category_id = @category_id, state_id = @state_id, lastModifiedDate = @lastModifiedDate, lastModifiedPerson_id = @lastModifiedPerson_id, closingDate = @closingDate, closingPerson_id = @closingPerson_id WHERE id = @id;";
             
             updateCommand.CommandText = sqlQuery;
             updateCommand.Connection = DatabaseInteractions.GetConnection();
@@ -179,6 +179,8 @@ namespace Ticketing
             updateCommand.Parameters.AddWithValue("@state_id", _statesId);
             updateCommand.Parameters.AddWithValue("@lastModifiedDate", _lastModifiedDate);
             updateCommand.Parameters.AddWithValue("@lastModifiedPerson_id", _lastModifiedPersonId);
+            updateCommand.Parameters.AddWithValue("@closingDate", _closingDate);
+            updateCommand.Parameters.AddWithValue("@closingPerson_id", _closingPersonId);
 
             updateCommand.Parameters.AddWithValue("@id", _id);
 

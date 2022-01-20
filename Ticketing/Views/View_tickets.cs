@@ -20,6 +20,7 @@ namespace Ticketing
         private int _ticketSelected_id; //Id du ticket séléctionner, sert pour la modification.
         private bool _dgvDataLoaded; //Valeur savoir quand les données de la base de données sont inscrites dans la DataGridView.
 
+        private const int STATE_ID_CLOSED = 4;
 
         public FrmViewTtickets()
         {
@@ -105,6 +106,7 @@ namespace Ticketing
                 newRow.Cells["TicketDescription"].Value = ticket.Description;
                 newRow.Cells["TicketCategory"].Value = ticket.Category;
                 newRow.Cells["TicketState"].Value = ticket.State;
+                if(ticket.StatesId == STATE_ID_CLOSED) newRow.Cells["TicketState"].ReadOnly = true; // bloqué la réouverture des tickets
                 newRow.Cells["openingDate"].Value = ticket.OpeningDate;
                 newRow.Cells["openingPerson"].Value = ticket.OpeningPerson;
                 newRow.Cells["LastModifiedDate"].Value = ticket.LastModifiedDate;
@@ -124,7 +126,14 @@ namespace Ticketing
                 ticketToUpdate.Description = dgvTickets.CurrentRow.Cells["TicketDescription"].Value.ToString();
                 ticketToUpdate.LastModifiedDate = DateTime.Now;
                 ticketToUpdate.CategoryId = Category.FindFromName(dgvTickets.CurrentRow.Cells["TicketCategory"].Value.ToString()).Id;
+                if(State.FindFromName(dgvTickets.CurrentRow.Cells["TicketState"].Value.ToString()).Id == STATE_ID_CLOSED && ticketToUpdate.StatesId != STATE_ID_CLOSED)
+                {
+                    ticketToUpdate.ClosingDate = DateTime.Now;
+                    ticketToUpdate.ClosingPersonId = User.Id;
+                    dgvTickets.CurrentRow.Cells["TicketState"].ReadOnly = true;
+                }
                 ticketToUpdate.StatesId = State.FindFromName(dgvTickets.CurrentRow.Cells["TicketState"].Value.ToString()).Id;
+
                 ticketToUpdate.LastModifiedPersonId = User.Id;
 
                 //Execute the Update query

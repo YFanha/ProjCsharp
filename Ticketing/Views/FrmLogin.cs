@@ -14,7 +14,6 @@ namespace Ticketing
 {
     public partial class FrmLogin : Form
     {
-        private MySqlConnection _connection;
         public User UserConnected;
 
         //Constante pour définir le type d'utilisateur /!\ DOIT CORRESPONDRE à LA BASE DE DONNÉE (Valeur de la table ´roles´) /!\
@@ -30,7 +29,7 @@ namespace Ticketing
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            _connection.Close();
+            DatabaseInteractions.CloseConnection();
             this.Close();
         }
 
@@ -39,7 +38,7 @@ namespace Ticketing
 
             try
             {
-                _connection = DatabaseInteractions.GetConnection();
+                DatabaseInteractions.GetConnection();
             }
             catch (MySqlException ex)
             {

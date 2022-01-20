@@ -13,6 +13,8 @@ namespace Ticketing
 {
     public partial class FrmDetailTicket : Form
     {
+        public Ticket Ticket;
+
         public FrmDetailTicket()
         {
             InitializeComponent();
@@ -25,8 +27,27 @@ namespace Ticketing
 
         private void FrmDetailTicket_Load(object sender, EventArgs e)
         {
-            lblTicketId.Text = "12312312";
+            lblTicketId.Text = Ticket.Id.ToString();
+            lblTitleValue.Text = Ticket.Title;
+            lblProblemTypeValue.Text = Ticket.Category;
+            lblDateValue.Text = Ticket.OpeningDate.ToString();
+            lblStateTicket.Text = Ticket.State;
+            lblTicketOpenBy.Text = Ticket.OpeningPerson;
+            lblTicketLastEdit.Text = Ticket.LastModifiedDate.ToString();
+            lblTicketEditBy.Text = Ticket.LastModifiedPerson;
+            lblTicketManager.Text = Ticket.Manager;
+
+
+
+            rtxtDescription.Text = Ticket.Description;
+
+
         }
 
+        private void btnRemoveTicket_Click(object sender, EventArgs e)
+        {
+            //Ticket ticketToDelete = Ticket.Find(id);
+            //ticketToDelete.Delete();
+        }
     }
 }

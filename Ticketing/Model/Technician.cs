@@ -15,9 +15,9 @@ namespace Ticketing
     {
         const int TECH_ROLES_ID = 2;
 
-        public Technician(string email) : base(email)
+        public Technician(string email, string firstname, string lastname, string phoneNumber, string password) : base(email, firstname, lastname, phoneNumber, password)
         {
-            
+            _rolesId = TECH_ROLES_ID;
         }
 
 

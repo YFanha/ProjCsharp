@@ -10,29 +10,78 @@ namespace Ticketing
 {
     public class User
     {
-        private int _id;
-        private string _firstname;
-        private string _lastname;
-        private string _phoneNumber;
-        private string _email;
-        private int _rolesId;
+        protected int _id;
+        protected string _firstname;
+        protected string _lastname;
+        protected string _phoneNumber;
+        protected string _email;
+        protected int _rolesId;
+        protected string _password;
 
-        public User(string email)
+        private const int USER_ROLE_ID = 1;
+
+        public User(string email, string firstname, string lastname, string phoneNumber, string password)
+        {
+            _email = email;
+            _firstname = firstname;
+            _lastname = lastname;
+            _phoneNumber = phoneNumber;
+            _password = password;
+            _rolesId = USER_ROLE_ID;
+        }
+
+        protected User(int id, string email, string firstname, string lastname, string phoneNumber, int role_id)
+        {
+            _email = email;
+            _id = id;
+            _firstname = firstname;
+            _lastname = lastname;
+            _phoneNumber = phoneNumber;
+            _rolesId = role_id;
+        }
+
+        public static User Find(string email)
         {
             //Récuperer données utilisateurs depuis l'email
             MySqlDataReader reader = new MySqlCommand("SELECT * FROM people WHERE email =\'" + email + "\'", DatabaseInteractions.GetConnection()).ExecuteReader();
 
+
+            User user = null;
             while (reader.Read())
             {
-                _email = email;
-                _id = reader.GetInt32("id");
-                _firstname = reader.GetString("firstname");
-                _lastname = reader.GetString("lastname");
-                _phoneNumber = reader.GetString("phoneNumber");
-                _rolesId = int.Parse(reader.GetString("role_id"));
+                user = GetUserFromReader(reader);
             }
-
             reader.Close();
+
+            return user;
+        }
+
+        public static User GetUserFromReader(MySqlDataReader reader)
+        {
+            string email = reader.GetString("email");
+            int id = reader.GetInt32("id");
+            string firstname = reader.GetString("firstname");
+            string lastname = reader.GetString("lastname");
+            string phoneNumber = reader.GetString("phoneNumber");
+            int role_id = int.Parse(reader.GetString("role_id"));
+
+            return new User(id, email, firstname, lastname, phoneNumber, role_id);
+        }
+
+        //Code pas tester
+        public void Register()
+        {
+            string sqlQuery = "INSERT INTO people (lastname, firstname, phoneNumber, email, password, role_id) VALUES (@lastname, @firstname, @phoneNumber, @email, @password, @role_id)";
+            MySqlCommand registerCommand = new MySqlCommand(sqlQuery, DatabaseInteractions.GetConnection());
+
+            registerCommand.Parameters.AddWithValue("@lastname", _lastname);
+            registerCommand.Parameters.AddWithValue("@firstname", _firstname);
+            registerCommand.Parameters.AddWithValue("@phoneNumber", _phoneNumber);
+            registerCommand.Parameters.AddWithValue("@email", _email);
+            registerCommand.Parameters.AddWithValue("@password", _password);
+            registerCommand.Parameters.AddWithValue("@role_id", _rolesId);
+
+            registerCommand.ExecuteNonQuery();
         }
 
         public int Id
@@ -82,7 +131,7 @@ namespace Ticketing
                 throw new BadPasswordException();
             }
 
-            return new User(email);
+            return User.Find(email);
         }
 
         public static int GetId(string fullname)

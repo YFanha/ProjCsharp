@@ -30,6 +30,7 @@ namespace Ticketing
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            
             _connection.Close();
             this.Close();
         }

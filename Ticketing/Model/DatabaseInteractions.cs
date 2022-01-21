@@ -36,7 +36,6 @@ namespace Ticketing
             return _connection;
         }
 
-
         public static string ReadFirstString(string sql)
         {
             MySqlCommand sqlQuery = new MySqlCommand(sql, DatabaseInteractions.GetConnection());
@@ -54,7 +53,5 @@ namespace Ticketing
                 _connection.Close();
             }
         }
-        
-
     }
 }

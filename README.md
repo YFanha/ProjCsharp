@@ -75,6 +75,6 @@ Le projet devra être rendu le 24 Janvier 2022. Une présentation du projet devr
 
 # 7 - Utilisation
 
-Pour pouvoir utiliser l'application, il faudra impérativement avec la base de données en local (127.0.0.1). Il faudra donc exécuter le script ```tickets.sql``` pour créer la base de données ainsi que certaine données présente lors de la création du script. Ce script à été effectué automatiquemnt par heidiSQL le 21.01.2022. Le script se trouve sous ```Conception\Database```.
-Sans cette base de données, l'application ne pourra pas tournée correctement. \
+Pour pouvoir utiliser l'application, il faudra impérativement avec la base de données en local (127.0.0.1). Il faudra donc exécuter le script ```tickets.sql``` pour créer la base de données ainsi que certaine données présentes lors de la création du script. Ce script à été effectué automatiquemnt par heidiSQL le 21.01.2022. Le script se trouve sous ```Conception\Database```.
+Sans cette base de données, l'application ne pourra pas tourner correctement. \
 Si la base de données n'est pas hébérgée en local, il faudra modifier le fichier "DatabaseInteractions.cs" pour y changer l'adresse IP du serveur.

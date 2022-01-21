@@ -45,9 +45,13 @@ namespace Ticketing
 
         public static void CloseConnection()
         {
-            if(_connection.State == System.Data.ConnectionState.Closed)
+            if(_connection is null)
             {
-                _connection.Open();
+                throw new NoConnectionException();
+            }
+            if (_connection.State != System.Data.ConnectionState.Closed)
+            {
+                _connection.Close();
             }
         }
         

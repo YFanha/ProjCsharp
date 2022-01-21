@@ -18,4 +18,10 @@ namespace Ticketing
         {
         }
     }
+    public class NoConnectionException : Exception
+    {
+        public NoConnectionException() : base()
+        {
+        }
+    }
 }

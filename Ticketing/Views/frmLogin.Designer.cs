@@ -96,8 +96,9 @@ namespace Ticketing
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(280, 103);
+            this.lblEmail.Location = new System.Drawing.Point(284, 103);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(80, 15);
             this.lblEmail.TabIndex = 6;
@@ -105,8 +106,9 @@ namespace Ticketing
             // 
             // lblPass
             // 
+            this.lblPass.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPass.AutoSize = true;
-            this.lblPass.Location = new System.Drawing.Point(283, 171);
+            this.lblPass.Location = new System.Drawing.Point(284, 174);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(77, 15);
             this.lblPass.TabIndex = 7;

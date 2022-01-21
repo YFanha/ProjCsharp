@@ -266,6 +266,7 @@ namespace Ticketing
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtDescription.Location = new System.Drawing.Point(32, 250);
             this.rtxtDescription.Name = "rtxtDescription";
+            this.rtxtDescription.ReadOnly = true;
             this.rtxtDescription.Size = new System.Drawing.Size(446, 205);
             this.rtxtDescription.TabIndex = 5;
             this.rtxtDescription.Text = "";

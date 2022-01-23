@@ -20,7 +20,7 @@ namespace Ticketing
         {
             if (_connection is null)
             {
-                string datasource = "10.229.33.34";
+                string datasource = "127.0.0.1";
                 string username = "admin";
                 string database = "ticketing";
                 string password = "Pa$$w0rd";
